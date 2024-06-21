@@ -53,7 +53,7 @@ This is a full-stack e-commerce web application for a clothing brand built with 
 
     ```sh
     python -m venv env
-    source env/bin/activate  # On Windows use `env\Scripts\activate`
+    source env\Scripts\activate  # On Linux use `env/bin/activate`
     ```
 
 3. Install the dependencies:
