@@ -2,8 +2,9 @@ import { useState } from 'react'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
 import '../css/App.css'
+import axios from "axios"
 
-function App() {
+function Home() {
   const [count, setCount] = useState(0)
 
   return (
@@ -32,4 +33,4 @@ function App() {
   )
 }
 
-export default App
+export default Home
