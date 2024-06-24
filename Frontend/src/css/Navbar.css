@@ -1,3 +1,22 @@
 .delivery-banner{
-    height: 10svh;
+    height: 5svh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    padding: 0px;
+   justify-content: center;
+   align-items: center;
+}
+
+.delivery-banner p{
+    font-size: 1rem;
+}
+
+.delivery-img-cnt {
+
+    width: 20px;
+}
+.delivery-img-cnt img{
+
+    max-width: 100%;
+    filter: invert(1);
 }
