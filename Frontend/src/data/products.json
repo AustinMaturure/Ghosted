@@ -1,0 +1,104 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Product 1 - hoodie, sweatshirt or cap",
+            "img": "/public/products/product1.png",
+            "discount": null,
+            "price": 200.0,
+            "slug": "product-1",
+            "sizes": ["sm", "md", "l", "xl"],
+            "colours": ["black", "white", "baige"]
+        },
+        {
+            "id": 2,
+            "name": "Product 2 - hoodie, sweatshirt or cap",
+            "img": "/public/products/product2.png",
+            "discount": null,
+            "price": 249.99,
+            "slug": "product-2",
+            "sizes": ["sm", "md", "l", "xl"],
+            "colours": ["black", "white", "baige"]
+        },
+        {
+            "id": 3,
+            "name": "Product 3 - hoodie, sweatshirt or cap",
+            "img": "/public/products/product3.png",
+            "discount": null,
+            "price": 100.0,
+            "slug": "product-3",
+            "sizes": ["sm", "md", "l", "xl"],
+            "colours": ["black", "white", "baige"]
+        },
+        {
+            "id": 4,
+            "name": "Product 4 - hoodie, sweatshirt or cap",
+            "img": "/public/products/product4.png",
+            "discount": null,
+            "price": 400.0,
+            "slug": "product-4",
+            "sizes": ["sm", "md", "l", "xl"],
+            "colours": ["black", "white", "baige"]
+        },
+        {
+            "id": 5,
+            "name": "Product 5",
+            "img": "/public/products/product5.png",
+            "discount": null,
+            "price": 200.0,
+            "slug": "product-5",
+            "sizes": ["sm", "md", "l", "xl"],
+            "colours": ["black", "white", "baige"]
+        },
+        {
+            "id": 6,
+            "name": "Product 6 - hoodie, sweatshirt or cap",
+            "img": "/public/products/product6.png",
+            "discount": null,
+            "price": 300.0,
+            "slug": "product-6",
+            "sizes": ["sm", "md", "l", "xl"],
+            "colours": ["black", "white", "baige"]
+        },
+        {
+            "id": 7,
+            "name": "Product 7 - hoodie, sweatshirt or cap",
+            "img": "/public/products/product7.png",
+            "discount": null,
+            "price": 320.0,
+            "slug": "product-7",
+            "sizes": ["sm", "md", "l", "xl"],
+            "colours": ["black", "white", "baige"]
+        },
+        {
+            "id": 8,
+            "name": "Product 8 - hoodie, sweatshirt or cap",
+            "img": "/public/products/product8.png",
+            "discount": null,
+            "price": 300.0,
+            "slug": "product-8",
+            "sizes": ["sm", "md", "l", "xl"],
+            "colours": ["black", "white", "baige"]
+        },
+        {
+            "id": 9,
+            "name": "Product 9 - hoodie, sweatshirt or cap",
+            "img": "/public/products/product9.png",
+            "discount": null,
+            "price": 100.0,
+            "slug": "product-9",
+            "sizes": ["sm", "md", "l", "xl"],
+            "colours": ["black", "white", "baige"]
+        },
+        {
+            "id": 10,
+            "name": "Product 10 - hoodie, sweatshirt or cap",
+            "img": "/public/products/product10.png",
+            "discount": null,
+            "price": 200.0,
+            "slug": "product-10",
+            "sizes": ["sm", "md", "l", "xl"],
+            "colours": ["black", "white", "baige"]
+        }
+    ]
+}
