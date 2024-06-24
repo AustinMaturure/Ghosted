@@ -5,8 +5,6 @@ import "../css/App.css";
 import axios from "axios";
 
 function Home() {
-    const [count, setCount] = useState(0);
-
     return <>This is a test</>;
 }
 
