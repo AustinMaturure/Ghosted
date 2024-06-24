@@ -2,7 +2,7 @@
     "products": [
         {
             "id": 1,
-            "name": "Product 1 - hoodie, sweatshirt or cap",
+            "name": "Leave your Mark",
             "img": "/public/products/product1.png",
             "discount": null,
             "price": 200.0,
@@ -12,7 +12,7 @@
         },
         {
             "id": 2,
-            "name": "Product 2 - hoodie, sweatshirt or cap",
+            "name": "F* Around & Find Out",
             "img": "/public/products/product2.png",
             "discount": null,
             "price": 249.99,
@@ -22,7 +22,7 @@
         },
         {
             "id": 3,
-            "name": "Product 3 - hoodie, sweatshirt or cap",
+            "name": "Need Money Fror Porsche",
             "img": "/public/products/product3.png",
             "discount": null,
             "price": 100.0,
@@ -32,7 +32,7 @@
         },
         {
             "id": 4,
-            "name": "Product 4 - hoodie, sweatshirt or cap",
+            "name": "Ghosted Cap",
             "img": "/public/products/product4.png",
             "discount": null,
             "price": 400.0,
@@ -42,7 +42,7 @@
         },
         {
             "id": 5,
-            "name": "Product 5",
+            "name": "You've Been Gapped",
             "img": "/public/products/product5.png",
             "discount": null,
             "price": 200.0,
@@ -52,7 +52,7 @@
         },
         {
             "id": 6,
-            "name": "Product 6 - hoodie, sweatshirt or cap",
+            "name": "Won't Stop Dont Try",
             "img": "/public/products/product6.png",
             "discount": null,
             "price": 300.0,
@@ -62,7 +62,7 @@
         },
         {
             "id": 7,
-            "name": "Product 7 - hoodie, sweatshirt or cap",
+            "name": "Come Get Me",
             "img": "/public/products/product7.png",
             "discount": null,
             "price": 320.0,
@@ -72,7 +72,7 @@
         },
         {
             "id": 8,
-            "name": "Product 8 - hoodie, sweatshirt or cap",
+            "name": "Ghosted",
             "img": "/public/products/product8.png",
             "discount": null,
             "price": 300.0,
@@ -82,7 +82,7 @@
         },
         {
             "id": 9,
-            "name": "Product 9 - hoodie, sweatshirt or cap",
+            "name": "I'm Finding Out",
             "img": "/public/products/product9.png",
             "discount": null,
             "price": 100.0,
@@ -92,7 +92,7 @@
         },
         {
             "id": 10,
-            "name": "Product 10 - hoodie, sweatshirt or cap",
+            "name": "Friend Or Foe?",
             "img": "/public/products/product10.png",
             "discount": null,
             "price": 200.0,

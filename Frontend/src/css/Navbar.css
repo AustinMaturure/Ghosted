@@ -5,18 +5,71 @@
     padding: 0px;
    justify-content: center;
    align-items: center;
+   position: relative;
+   gap: 15px;
+   border-bottom: dashed 3px var(--text-color);
 }
 
 .delivery-banner p{
     font-size: 1rem;
+    font-family: 'satoshi';
 }
 
-.delivery-img-cnt {
+.delivery-img-cnt, .close-img-cnt {
 
     width: 20px;
 }
-.delivery-img-cnt img{
+.delivery-img-cnt img, .close-img-cnt img, .logo-img-cnt img{
 
     max-width: 100%;
     filter: invert(1);
+    object-fit: cover;
+}
+
+.close-img-cnt{
+    position: absolute;
+    right: 0;
+    padding-right: 10px;
+    cursor: pointer;
+}
+
+.hide{
+    display: none !important;
+}
+
+.navbar{
+    display: flex;
+    background-color: var(--background-color);
+    justify-content: space-between;
+    position: relative;
+    align-items: center;
+    padding: 0.5rem;
+    padding-bottom: 0px;
+
+}
+
+.logo-img-cnt{
+   width: 80px;
+
+}
+.logo-img-cnt img{
+    max-height: 100%;
+    transform: scale(2);
+    align-self: center;
+    
+}
+
+.menu-img-cnt, .search-img-cnt, .cart-img-cnt{
+    width: 30px;
+    cursor: pointer;
+}
+.menu-img-cnt img, .search-img-cnt img, .cart-img-cnt img{
+    max-height: 100%;
+    max-width: 100%;
+    filter: invert(1);
+}
+
+.nav-right{
+    display: flex;
+    gap: 15%;
 }
