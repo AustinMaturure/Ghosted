@@ -177,5 +177,5 @@ JAZZMIN_UI_TWEAKS = {
 }
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000',
+    'http://localhost:8000','http://localhost:5174', 'http://localhost:5173'
 )
