@@ -28,7 +28,7 @@ class ApiColour(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter]
     search_fields = ['name']
     pagination_class = PageNumberPagination
-    lookup_field = 'slug'
+
 
 class ApiCategory(viewsets.ModelViewSet):
     permission_classes = [IsAdminOrReadOnly,]
@@ -37,7 +37,7 @@ class ApiCategory(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter]
     search_fields = ['name']
     pagination_class = PageNumberPagination
-    lookup_field = 'slug'
+
 
 class ApiSize(viewsets.ModelViewSet):
     permission_classes = [IsAdminOrReadOnly,]
@@ -46,4 +46,4 @@ class ApiSize(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter]
     search_fields = ['size']
     pagination_class = PageNumberPagination
-    lookup_field = 'slug'
+
