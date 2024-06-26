@@ -1,43 +1,81 @@
-import { useState } from "react";
-import reactLogo from "../assets/react.svg";
-import viteLogo from "/vite.svg";
+import { useState, useEffect } from "react";
 import "../css/App.css";
-import axios from "axios";
-import items from '../data/products.json'
 import { Link } from "react-router-dom";
 
-function Home() {
+// Filter function to filter items based on the selected category
+const Filter = (category, items) => {
+  if (!category) {
+    return items;
+  }
+  return items.filter(item => item.category.name === category);
+};
 
-    return <>
-    <div className="home-container">
-        <div className="filters flex">
-            <div className="All"><h1>All</h1></div>
-            <div className="Hoodies"><h1>Hoodies</h1></div>
-            <div className="Shirts"><h1>Shirts</h1></div>
-            <div className="Caps"><h1>Caps</h1></div>
-            <div className="Sweaters"><h1>Sweaters</h1></div>
-        </div>
-        <p className="items-hint">You are Currently Being Shown all {items.products.length} Items.</p>
+function Home() {
+  const [data, setData] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [category, setCategory] = useState(null);
+  const filteredItems = Filter(category, data);
+
+  // Fetch data from the API when the component mounts
+  useEffect(() => {
+    const fetchData = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch('https://ghosted.pythonanywhere.com/api/products/');
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const jsonData = await response.json();
+        setData(jsonData.results);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    fetchData();
+  }, []);
+
+  return (
+    isLoading ? (
+      <div className="home-container">
+
+        <p className="items-hint">You are Currently Being Shown all {filteredItems.length} Items.</p>
         <section className="items-cnt">
-            { items.products.map((item)=>(
-            <Link to={`/item/${item.id}`}>
-              <div className='product'key={item.id}>
-                
+          <div className='product skel grad-animation'></div>
+          <div className='product skel grad-animation'></div>
+          <div className='product skel grad-animation'></div>
+          <div className='product skel grad-animation'></div>
+        </section>
+      </div>
+    ) : (
+      <div className="home-container">
+        <div className="filters flex">
+          <div className="All" onClick={() => setCategory(null)}><h1>All</h1></div>
+          <div className="Sweaters" onClick={() => setCategory('sweater')}><h1>Sweaters</h1></div>
+          <div className="Shirts" onClick={() => setCategory('shirts')}><h1>Shirts</h1></div>
+          <div className="Caps" onClick={() => setCategory('caps')}><h1>Caps</h1></div>
+          <div className="Hoodies" onClick={() => setCategory('hoodie')}><h1>Hoodies</h1></div>
+        </div>
+        <p className="items-hint">You are Currently Being Shown all {filteredItems.length} Items.</p>
+        <section className="items-cnt">
+          {filteredItems.map((item) => (
+            <Link to={`/item/${item.slug}`} key={item.id}>
+              <div className='product'>
                 <div className="product-img-cnt">
-                <img src={item.img} alt="" />  
+                  <img src={item.images[0].image} alt="" />
                 </div>
                 <h1 className="product-name">{item.name}</h1>
-                <h1 className="product-price">R {item.price}</h1>  
-              </div>  
+                <h1 className="product-price">R {item.price}</h1>
+              </div>
             </Link>
-            ))}
-         
-            
-
-        </section>   <hr /><p style={{'fontFamily':"satoshi", fontWeight:"bold", textAlign:"right"}}>End of List.</p>
-    </div>
-    
-    </>;
+          ))}
+        </section>
+        <hr />
+        <p style={{'fontFamily': "satoshi", fontWeight: "bold", textAlign: "right"}}>End of List.</p>
+      </div>
+    )
+  );
 }
 
 export default Home;

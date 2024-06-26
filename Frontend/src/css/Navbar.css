@@ -5,7 +5,9 @@
     padding: 0px;
    justify-content: center;
    align-items: center;
-   position: relative;
+   position: sticky;
+   top: 0;
+   z-index: 3;
    gap: 15px;
    border-bottom: dashed 3px var(--text-color);
 }
@@ -72,4 +74,35 @@
 .nav-right{
     display: flex;
     gap: 15%;
+}
+
+.search-box{
+    background-color: var(--background-color);
+    display: none;
+    justify-content: center;
+    border-top: 1px solid var(--text-color);
+    height: 2rem;padding: 1rem;
+}
+.search-hide{
+    display: flex;
+}
+.search-box input{
+    background-color: transparent;
+    font-family: 'Oswald';
+    color: var(--text-color);
+    border: none;
+    border-bottom: 2px solid #F7FF58;
+    font-size: 1.5rem;
+    outline: none;
+    
+}
+
+.search-btn {
+   background-color: transparent;
+   border: none;
+  
+}
+
+.search-box img{
+    padding: 4px;    box-sizing: border-box;
 }

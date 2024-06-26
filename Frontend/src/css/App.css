@@ -14,19 +14,41 @@
 
 }
 
+.skel{
+  height: 20rem;
+  background-color: rgba(207, 207, 207, 0.838);
+  min-width: 100%;
+}
+
 .filters div:hover{
   cursor: pointer;
   background-color: var(--text-color);
   
 }
 
+.grad-animation {
+  background: linear-gradient(-90deg, #dadada 25%, #7d7d7d 50%, #dedede 75%);
+  background-size: 400% 100%;
+  animation: gradientLoading 2s infinite alternate;
+}
+@keyframes gradientLoading {
+  0% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
+}
+
 .filters div:hover h1{
   color: var(--background-color);
+  
 
 }
 
 .filters div:nth-child(1){
 font-size: 1.7em;
+
 
 }
 
