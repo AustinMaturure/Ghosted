@@ -18,7 +18,6 @@ class ApiProducts(viewsets.ModelViewSet):
     filterset_class = ProductFilter
     search_fields = ['name', 'description']
     ordering_fields = ['price']
-    pagination_class = PageNumberPagination
     lookup_field = 'slug'
 
 class ApiColour(viewsets.ModelViewSet):
@@ -36,7 +35,6 @@ class ApiCategory(viewsets.ModelViewSet):
     queryset = Category.objects.all()
     filter_backends = [DjangoFilterBackend, SearchFilter]
     search_fields = ['name']
-    pagination_class = PageNumberPagination
 
 
 class ApiSize(viewsets.ModelViewSet):
@@ -45,5 +43,4 @@ class ApiSize(viewsets.ModelViewSet):
     queryset = Size.objects.all()
     filter_backends = [DjangoFilterBackend, SearchFilter]
     search_fields = ['size']
-    pagination_class = PageNumberPagination
 
