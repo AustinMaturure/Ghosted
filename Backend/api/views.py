@@ -5,10 +5,9 @@ from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.pagination import PageNumberPagination
 from .permissions import IsAdminOrReadOnly
 
-
-from ghosted.models import Product
+from ghosted.models import Product, Colour,Category, Size
 from .filters import ProductFilter
-from .serializers import ProductSerializer
+from .serializers import ProductSerializer,ColourSerializer, CategorySerializer, SizeSerializer
 
 class ApiProducts(viewsets.ModelViewSet):
     permission_classes = [IsAdminOrReadOnly,]
@@ -20,3 +19,31 @@ class ApiProducts(viewsets.ModelViewSet):
     search_fields = ['name', 'description']
     ordering_fields = ['price']
     pagination_class = PageNumberPagination
+    lookup_field = 'slug'
+
+class ApiColour(viewsets.ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly,]
+    serializer_class = ColourSerializer
+    queryset = Product.objects.all()
+    filter_backends = [DjangoFilterBackend, SearchFilter]
+    search_fields = ['name']
+    pagination_class = PageNumberPagination
+    lookup_field = 'slug'
+
+class ApiCategory(viewsets.ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly,]
+    serializer_class = CategorySerializer
+    queryset = Category.objects.all()
+    filter_backends = [DjangoFilterBackend, SearchFilter]
+    search_fields = ['name']
+    pagination_class = PageNumberPagination
+    lookup_field = 'slug'
+
+class ApiSize(viewsets.ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly,]
+    serializer_class = SizeSerializer
+    queryset = Size.objects.all()
+    filter_backends = [DjangoFilterBackend, SearchFilter]
+    search_fields = ['size']
+    pagination_class = PageNumberPagination
+    lookup_field = 'slug'

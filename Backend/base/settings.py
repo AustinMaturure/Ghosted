@@ -171,11 +171,13 @@ JAZZMIN_SETTINGS = {
     "site_header": "Ghosted",
     "site_brand": "Ghosted",
     "site_copyright": "Ghosted.com",
+    "show_ui_builder": True
     }
 JAZZMIN_UI_TWEAKS = {
-    "theme": "darkly",
+    "theme": "cyborg",
 }
 CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:8000',
+    'http://localhost:5174',
+    'http://localhost:5173',
 )
