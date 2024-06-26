@@ -180,4 +180,6 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:5174',
     'http://localhost:5173',
+    'https://ghostedza.netlify.app',
+    'https://ghostedza.com'
 )
