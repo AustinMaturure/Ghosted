@@ -35,6 +35,7 @@ function Home() {
     };
     fetchData();
   }, []);
+  console.log(filteredItems)
 
   return (
     isLoading ? (
