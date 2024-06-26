@@ -4,24 +4,26 @@ from ghosted.models import *
 class ProductImageSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProductImages
-        fields = ['id', 'product', 'image']
-        lookup_field = 'slug'
+        fields = ['image']
+
+
 class CategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = Category
-        fields = ['id', 'name', 'slug']
-        lookup_field = 'slug'
+        fields = ['name']
+
 
 class ColourSerializer(serializers.ModelSerializer):
     class Meta:
         model = Colour
-        fields = ['id', 'name', 'slug']
-        lookup_field = 'slug'
+        fields = ['name']
+
+
 class SizeSerializer(serializers.ModelSerializer):
     class Meta:
         model = Size
-        fields = ['id', 'size', 'slug']
-        lookup_field = 'slug'
+        fields = ['size']
+  
 
 class ProductSerializer(serializers.ModelSerializer):
     images = ProductImageSerializer(many=True, read_only=True)

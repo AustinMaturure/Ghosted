@@ -4,7 +4,7 @@ import random
 import time
 
 class Category(models.Model):
-    name = models.CharField(max_length=200)
+    name = models.CharField(max_length=200, default='shirt')
     def __str__(self):
         return self.name
     
@@ -45,4 +45,4 @@ class ProductImages(models.Model):
     product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='images')
     image = models.ImageField(upload_to='img', default='', null=True, blank=True)
     def __str__(self):
-        return self.product.name
+        return f"Image for {self.product.name}"
