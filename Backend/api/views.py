@@ -4,7 +4,9 @@ from rest_framework import viewsets, status
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.pagination import PageNumberPagination
 from .permissions import IsAdminOrReadOnly
-
+from rest_framework.response import Response
+from rest_framework import generics
+from django.db.models import Q
 from ghosted.models import Product, Colour,Category, Size
 from .filters import ProductFilter
 from .serializers import ProductSerializer,ColourSerializer, CategorySerializer, SizeSerializer
@@ -44,3 +46,26 @@ class ApiSize(viewsets.ModelViewSet):
     filter_backends = [DjangoFilterBackend, SearchFilter]
     search_fields = ['size']
 
+class ProductSearchView(generics.ListAPIView):
+    serializer_class = ProductSerializer
+
+    def get_queryset(self):
+        queryset = Product.objects.all()
+        search_query = self.request.query_params.get('query', None)
+        if search_query:
+            queryset = queryset.filter(
+                Q(name__icontains=search_query) |
+                Q(category__name__icontains=search_query)
+            )
+        return queryset
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        serializer = self.get_serializer(queryset, many=True)
+        data = []
+        for item in serializer.data:
+            data.append({
+                'name': item['name'],
+                'category': item['category']['name'] if 'category' in item and 'name' in item['category'] else None
+            })
+        return Response(data)

@@ -179,5 +179,6 @@ CORS_ORIGIN_WHITELIST = (
     'http://localhost:5174',
     'http://localhost:5173',
     'https://ghostedza.netlify.app',
-    'https://ghostedza.com'
+    'https://ghostedza.com',
+    'https://ghostedza.co.za'
 )
