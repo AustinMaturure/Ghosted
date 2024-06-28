@@ -1,83 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+select:focus {
+    outline: none;
+}
 .flex {
-  display: flex;
-
+    display: flex;
 }
 
-a{
-  text-decoration: none;
+a {
+    text-decoration: none;
 }
 
-html{
-  --background-color: #1f1f1f;
-  --text-color: #f1f1f1;
+html {
+    --background-color: #1f1f1f;
+    --text-color: #f1f1f1;
 }
 
-body{
-  margin: 0;
+body {
+    margin: 0;
 }
 
-h1{
-  font-family: 'Oswald';
-  color: #f1f1f1;
-  font-size: 1.5em;
-  margin: 0px;
-  transition: all 0.1s;
+h1 {
+    font-family: "Oswald";
+    color: #f1f1f1;
+    font-size: 1.5em;
+    margin: 0px;
+    transition: all 0.1s;
 }
 
-footer{
-
-  background-color: var(--background-color);
-  color: var(--text-color);
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-padding: 0.5rem;
+footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0.5rem;
 }
 
-footer h1{
-  margin: 0;
-  text-decoration: underline 12px #F7FF58;
-  font-size: 4em;
+footer h1 {
+    margin: 0;
+    text-decoration: underline 12px #f7ff58;
+    font-size: 4em;
 }
 
-footer h2{
-  font-family: 'Oswald';
-  
+footer h2 {
+    font-family: "Oswald";
 }
 
-footer input{
-  font-family: 'Oswald';
-  background-color: transparent;
-  outline: none;
-  font-size: 26px;
-  border: none;
-  border-bottom: 2px solid #F7FF58;
-  color: #f1f1f1;
-
+footer input {
+    font-family: "Oswald";
+    background-color: transparent;
+    outline: none;
+    font-size: 26px;
+    border: none;
+    border-bottom: 2px solid #f7ff58;
+    color: #f1f1f1;
 }
 
-footer p{
-  margin: 0;
+footer p {
+    margin: 0;
 }
 
-.s-links{
-  display: flex;
-  filter: invert(1);
-  gap: 8px;
-  margin-top: 2rem;
+.s-links {
+    display: flex;
+    filter: invert(1);
+    gap: 8px;
+    margin-top: 2rem;
 }
 
-.s-links img{
-  width: 40px;
-  cursor: pointer;
+.s-links img {
+    width: 40px;
+    cursor: pointer;
 }
 
-.s-links img:hover{
-  color: #F7FF58;
+.s-links img:hover {
+    color: #f7ff58;
 }
 
 .legal {
-  margin-top: 2rem;
-  font-family: 'satoshi';
+    margin-top: 2rem;
+    font-family: "satoshi";
 }
-

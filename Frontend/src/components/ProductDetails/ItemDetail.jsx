@@ -50,9 +50,17 @@ export default function ItemDetail() {
         );
 
     return (
-        <main className="">
+        <main className="container mx-auto flex flex-col lg:flex-row gap-10 lg:gap-12 sm:px-1 py-12 lg:py-0">
             <ProductImages images={productDetails.images} />
-            <ProductDetails productDetails={productDetails} />
+            <div className="lg:border-l-[0.75px] lg:border-r-[0.75px] sm:border-gray-400 lg:py-10 flex flex-col gap-6 lg:gap-8">
+                <div className="flex justify-between text-xl px-6 font-medium lg:text-2xl">
+                    <div className=" uppercase tracking-wide">
+                        {productDetails.name}
+                    </div>
+                    <div className="">R{productDetails.price}</div>
+                </div>
+                <ProductDetails productDetails={productDetails} />
+            </div>
         </main>
     );
 }
