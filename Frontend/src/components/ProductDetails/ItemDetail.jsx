@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import productData from "../../data.json";
 import ProductImages from "./ProductImages";
 import ProductDetails from "./ProductDetails";
+import LoadingSkeleton from "./LoadingSkeleton";
 
 export default function ItemDetail() {
     const { slug } = useParams();
@@ -29,18 +30,18 @@ export default function ItemDetail() {
             console.log(err);
             setErrorMessage("Error fetching product details" || err);
         } finally {
+            setIsLoading(true);
             setIsLoading(false);
         }
     };
 
     useEffect(() => {
-        // fetchProductDetails(); // uncomment during production
-        setProductDetails(productData);
-        setIsLoading(false);
+        fetchProductDetails(); // uncomment during production
+        // setProductDetails(productData);
     }, []);
 
     console.log("component re-render");
-    if (isLoading) return <div>Skeleton...</div>;
+    if (isLoading) return <LoadingSkeleton />;
     if (errorMessage)
         return (
             <div>

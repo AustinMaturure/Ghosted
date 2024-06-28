@@ -1,5 +1,3 @@
-import { useState } from "react";
-import ProductImages from "./ProductImages";
 import ProductDetailsTabs from "./ProductDetailsTabs";
 import AddToCartForm from "./AddToCartForm";
 

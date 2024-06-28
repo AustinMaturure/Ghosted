@@ -28,8 +28,7 @@ function Home() {
                     throw new Error("Network response was not ok");
                 }
                 const jsonData = await response.json();
-                console.log(jsonData);
-                setData(jsonData.results);
+                setData(jsonData);
             } catch (error) {
                 console.error("Error fetching data:", error);
             } finally {
@@ -38,6 +37,7 @@ function Home() {
         };
         fetchData();
     }, []);
+    console.log(filteredItems);
 
     return isLoading ? (
         <div className="home-container">
@@ -80,7 +80,7 @@ function Home() {
                     <Link to={`/item/${item.slug}`} key={item.id}>
                         <div className="product">
                             <div className="product-img-cnt">
-                                <img src={item.images[0].image} alt="" />
+                                <img src={item.images[0]} alt="" />
                             </div>
                             <h1 className="product-name">{item.name}</h1>
                             <h1 className="product-price">R {item.price}</h1>

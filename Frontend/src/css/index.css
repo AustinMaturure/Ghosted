@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 select:focus {
-    outline: none;
+    /* outline: none; */
 }
 .flex {
     display: flex;
