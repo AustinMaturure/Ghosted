@@ -23,7 +23,7 @@ const ProductDetailsTabs = ({ productDetails }) => {
                     className={
                         currentTab === "description"
                             ? "py-3 border-b-2 border-b-gray-900 text-gray-900 font-normal"
-                            : "py-3 border-b-2"
+                            : "py-3 border-b-2 border-white"
                     }>
                     Product Details
                 </button>
@@ -32,7 +32,7 @@ const ProductDetailsTabs = ({ productDetails }) => {
                     className={
                         currentTab === "materials"
                             ? "py-3 border-b-2 border-b-gray-900 text-gray-900 font-normal"
-                            : "py-3 border-b-2"
+                            : "py-3 border-b-2 border-white"
                     }>
                     Product Materials
                 </button>
@@ -41,7 +41,7 @@ const ProductDetailsTabs = ({ productDetails }) => {
                     className={
                         currentTab === "delivery"
                             ? "py-3 border-b-2 border-b-gray-900 text-gray-900 font-normal"
-                            : "py-3 border-b-2"
+                            : "py-3 border-b-2 border-white"
                     }>
                     Delivery Details
                 </button>

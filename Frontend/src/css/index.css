@@ -41,7 +41,7 @@ footer {
 
 footer h1 {
     margin: 0;
-    text-decoration: underline 12px #f7ff58;
+    text-decoration: underline 12px #064e3b;
     font-size: 4em;
 }
 
@@ -55,7 +55,7 @@ footer input {
     outline: none;
     font-size: 26px;
     border: none;
-    border-bottom: 2px solid #f7ff58;
+    border-bottom: 2px solid #064e3b;
     color: #f1f1f1;
 }
 
@@ -76,7 +76,7 @@ footer p {
 }
 
 .s-links img:hover {
-    color: #f7ff58;
+    color: #064e3b;
 }
 
 .legal {

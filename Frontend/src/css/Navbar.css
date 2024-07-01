@@ -1,45 +1,46 @@
-.delivery-banner{
+.delivery-banner {
     height: 5svh;
     background-color: var(--background-color);
     color: var(--text-color);
     padding: 0px;
-   justify-content: center;
-   align-items: center;
-   position: sticky;
-   top: 0;
-   z-index: 3;
-   gap: 15px;
-   border-bottom: dashed 3px var(--text-color);
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    gap: 15px;
+    border-bottom: dashed 3px var(--text-color);
 }
 
-.delivery-banner p{
+.delivery-banner p {
     font-size: 1rem;
-    font-family: 'satoshi';
+    font-family: "satoshi";
 }
 
-.delivery-img-cnt, .close-img-cnt {
-
+.delivery-img-cnt,
+.close-img-cnt {
     width: 20px;
 }
-.delivery-img-cnt img, .close-img-cnt img, .logo-img-cnt img{
-
+.delivery-img-cnt img,
+.close-img-cnt img,
+.logo-img-cnt img {
     max-width: 100%;
     filter: invert(1);
     object-fit: cover;
 }
 
-.close-img-cnt{
+.close-img-cnt {
     position: absolute;
     right: 0;
     padding-right: 10px;
     cursor: pointer;
 }
 
-.hide{
+.hide {
     display: none !important;
 }
 
-.navbar{
+.navbar {
     display: flex;
     background-color: var(--background-color);
     justify-content: space-between;
@@ -50,59 +51,61 @@
     box-shadow: 2px 2px 10px black;
 }
 
-.logo-img-cnt{
-   width: 80px;
-
+.logo-img-cnt {
+    width: 80px;
 }
-.logo-img-cnt img{
+.logo-img-cnt img {
     max-height: 100%;
     transform: scale(2);
     align-self: center;
-    
 }
 
-.menu-img-cnt, .search-img-cnt, .cart-img-cnt{
+.menu-img-cnt,
+.search-img-cnt,
+.cart-img-cnt {
     width: 30px;
     cursor: pointer;
 }
-.menu-img-cnt img, .search-img-cnt img, .cart-img-cnt img{
+.menu-img-cnt img,
+.search-img-cnt img,
+.cart-img-cnt img {
     max-height: 100%;
     max-width: 100%;
     filter: invert(1);
 }
 
-.nav-right{
+.nav-right {
     display: flex;
     gap: 15%;
 }
 
-.search-box{
+.search-box {
     background-color: var(--background-color);
     display: none;
     justify-content: center;
     border-top: 1px solid var(--text-color);
-    height: 2rem;padding: 1rem;
+    height: 2rem;
+    padding: 1rem;
 }
-.search-hide{
+.search-hide {
     display: flex;
 }
-.search-box input{
+.search-box input {
     background-color: transparent;
-    font-family: 'Oswald';
+    font-family: "Oswald";
     color: var(--text-color);
     border: none;
-    border-bottom: 2px solid #F7FF58;
+    border-bottom: 2px solid #064e3b;
     font-size: 1.5rem;
     outline: none;
-    
 }
 
 .search-btn {
-   background-color: transparent;
-   border: none;
-  
+    background-color: transparent;
+    border: none;
 }
 
-.search-box img{
-    padding: 4px;    box-sizing: border-box;
+.search-box img {
+    padding: 4px;
+    box-sizing: border-box;
 }
