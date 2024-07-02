@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../css/App.css";
-import { Link } from "react-router-dom";
 
 // Filter function to filter items based on the selected category
 const Filter = (category, items) => {
@@ -10,11 +10,12 @@ const Filter = (category, items) => {
     return items.filter((item) => item.category.name === category);
 };
 
-function Home() {
+function Home({ isOpen, setIsOpen }) {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [category, setCategory] = useState(null);
     const filteredItems = Filter(category, data);
+    const location = useLocation();
 
     // Fetch data from the API when the component mounts
     useEffect(() => {
@@ -37,7 +38,10 @@ function Home() {
         };
         fetchData();
     }, []);
-    console.log(filteredItems);
+
+    useEffect(() => {
+        setIsOpen(false);
+    }, [location]);
 
     return isLoading ? (
         <div className="home-container">
@@ -53,7 +57,7 @@ function Home() {
         </div>
     ) : (
         <div className="home-container">
-            <div className="filters flex">
+            <div className={`filters flex ${isOpen ? "show-nav" : "hide-nav"}`}>
                 <div className="All" onClick={() => setCategory(null)}>
                     <h1>All</h1>
                 </div>
