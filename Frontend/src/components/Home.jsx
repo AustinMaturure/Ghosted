@@ -59,7 +59,7 @@ function Home() {
                 </div>
                 <div
                     className="Sweaters"
-                    onClick={() => setCategory("sweater")}>
+                    onClick={() => setCategory("sweaters")}>
                     <h1>Sweaters</h1>
                 </div>
                 <div className="Shirts" onClick={() => setCategory("shirts")}>
@@ -68,7 +68,7 @@ function Home() {
                 <div className="Caps" onClick={() => setCategory("caps")}>
                     <h1>Caps</h1>
                 </div>
-                <div className="Hoodies" onClick={() => setCategory("hoodie")}>
+                <div className="Hoodies" onClick={() => setCategory("hoodies")}>
                     <h1>Hoodies</h1>
                 </div>
             </div>

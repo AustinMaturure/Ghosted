@@ -90,9 +90,9 @@
 }
 
 .product-img-cnt {
-    min-width: 100%;
-    height: 18rem;
-    background-color: rgba(207, 207, 207, 0.838);
+    /* min-width: 100%;
+    height: 18rem; */
+    /* background-color: rgba(207, 207, 207, 0.838); */
     display: flex;
     border-radius: 12px;
     align-items: center;
