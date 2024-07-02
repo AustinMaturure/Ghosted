@@ -10,7 +10,7 @@ const ProductImages = ({ images }) => {
                         {images.map((imageUrl, index) => (
                             <div
                                 key={index}
-                                className="shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] rounded-lg bg-gray-50 w-12 h-12"
+                                className="shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] rounded-lg bg-gray-200 w-12 h-12 hover:cursor-pointer"
                                 onClick={() =>
                                     setImgIndex(images.indexOf(imageUrl))
                                 }>
@@ -26,7 +26,7 @@ const ProductImages = ({ images }) => {
                         ))}
                     </div>
                 </div>
-                <div className=" sm:rounded-xl">
+                <div className=" sm:rounded-xl bg-gray-100">
                     <img
                         src={images[imgIndex]}
                         alt=""

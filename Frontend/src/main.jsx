@@ -9,7 +9,7 @@ import ItemDetail from "./components/ProductDetails/ItemDetail.jsx";
 import Cart from "./components/Cart.jsx";
 import PageNotFound from "./components/PageNotFound.jsx";
 
-import './index.css';
+import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
