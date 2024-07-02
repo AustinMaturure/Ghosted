@@ -17,7 +17,10 @@ const ProductImages = ({ images }) => {
                                 <img
                                     src={imageUrl}
                                     alt=""
-                                    className="h-auto w-full block object-contain rounded-lg"
+                                    className={`h-auto w-full block object-contain rounded-lg ${
+                                        imgIndex === index &&
+                                        "border border-solid border-blue-500 "
+                                    }`}
                                 />
                             </div>
                         ))}
