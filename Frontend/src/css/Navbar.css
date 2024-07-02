@@ -113,6 +113,10 @@ align-items: center;
     margin: 0;
     margin-bottom: 6px;
 }
+
+.search-hint-link a:hover{
+    color: #064e3b;
+}
 .search{
     display: flex;
     align-items: center;
@@ -122,9 +126,10 @@ align-items: center;
     font-family: 'Oswald';
     color: var(--text-color);
     border: none;
-    border-bottom: 2px solid #F7FF58;
+    border-bottom: 2px solid #064e3b;
     font-size: 1.5rem;
     outline: none;
+    cursor: text;
     
 }
 

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import "../css/App.css";
-import { Link } from "react-router-dom";
 
 // Filter function to filter items based on the selected category
 const Filter = (category, items) => {
@@ -10,11 +10,12 @@ const Filter = (category, items) => {
   return items.filter(item => item.category.name === category);
 };
 
-function Home() {
+function Home({ isOpen, setIsOpen }) {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [category, setCategory] = useState(null);
   const filteredItems = Filter(category, data);
+  const location = useLocation();
 
   // Fetch data from the API when the component mounts
   useEffect(() => {
@@ -35,12 +36,14 @@ function Home() {
     };
     fetchData();
   }, []);
-  console.log(filteredItems)
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   return (
     isLoading ? (
       <div className="home-container">
-
         <p className="items-hint">You are Currently Being Shown all {filteredItems.length} Items.</p>
         <section className="items-cnt">
           <div className='product skel grad-animation'></div>
@@ -51,12 +54,12 @@ function Home() {
       </div>
     ) : (
       <div className="home-container">
-        <div className="filters flex">
+        <div className={`filters flex ${isOpen ? 'show-nav' : 'hide-nav'}`}>
           <div className="All" onClick={() => setCategory(null)}><h1>All</h1></div>
-          <div className="Sweaters" onClick={() => setCategory('sweater')}><h1>Sweaters</h1></div>
+          <div className="Sweaters" onClick={() => setCategory('sweaters')}><h1>Sweaters</h1></div>
           <div className="Shirts" onClick={() => setCategory('shirts')}><h1>Shirts</h1></div>
           <div className="Caps" onClick={() => setCategory('caps')}><h1>Caps</h1></div>
-          <div className="Hoodies" onClick={() => setCategory('hoodie')}><h1>Hoodies</h1></div>
+          <div className="Hoodies" onClick={() => setCategory('hoodies')}><h1>Hoodies</h1></div>
         </div>
         <p className="items-hint">You are Currently Being Shown all {filteredItems.length} Items.</p>
         <section className="items-cnt">

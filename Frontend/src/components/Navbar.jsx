@@ -1,3 +1,5 @@
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../css/Navbar.css';
 import deliveryImg from '../assets/delivery.svg';
 import closeImg from '../assets/close.svg';
@@ -5,15 +7,15 @@ import logo from '../assets/logo/logos.svg';
 import search from '../assets/logo/search.svg';
 import menu from '../assets/logo/menu.svg';
 import cart from '../assets/logo/cart1.svg';
-import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 
-export default function Navbar() {
+export default function Navbar({ isOpen, toggleNavbar }) {
   const [visible, setVisibility] = useState(true);
   const [svisible, setsVisibility] = useState(true);
   const [data, setData] = useState([]);
   const [query, setQuery] = useState('');
+  const [img, setImg] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,6 +41,10 @@ export default function Navbar() {
     fetchData();
   }, [query]);
 
+  const toggleHamImg = () => {
+    setImg(!img);
+  };
+
   return (
     <>
       {/* Delivery banner */}
@@ -54,8 +60,8 @@ export default function Navbar() {
 
       {/* Navbar */}
       <nav className='navbar'>
-        <div className="menu-img-cnt">
-          <img src={menu} alt="Menu" />
+        <div className="menu-img-cnt" onClick={toggleNavbar}>
+          <img onClick={toggleHamImg} src={`${img ? closeImg : menu}`} alt="Menu" />
         </div>
         <Link to={'/'}>
           <div className="logo-img-cnt">
@@ -74,35 +80,37 @@ export default function Navbar() {
         </div>
       </nav>
 
-
       {/* Search box */}
-      {svisible ? (<>
-        <div className={`search-box ${!svisible ? '' : 'search-hide'}`}>
-          <div className="search">
-            <input
-              className='search-ipt'
-              type="text"
-              onChange={(e) => setQuery(e.target.value)}
-              value={query}
-              placeholder='Enter Search Query'
-            />
-            <button className='search-btn' type="button" onClick={() => setQuery(query)}>
-              <div className="search-img-cnt">
-                <img src={search} alt="Search" />
-              </div>
-            </button>
+      {svisible ? (
+        <>
+          <div className={`search-box ${!svisible ? '' : 'search-hide'}`}>
+            <div className="search">
+              <input
+                className='search-ipt'
+                type="text"
+                onChange={(e) => setQuery(e.target.value)}
+                value={query}
+                placeholder='Enter Search Query'
+              />
+              <button className='search-btn' type="button" onClick={() => setQuery(query)}>
+                <div className="search-img-cnt">
+                  <img src={search} alt="Search" />
+                </div>
+              </button>
+            </div>
           </div>
-        </div><div className="search-hint">
-          {isLoading ? (
-            <p style={{ fontFamily: 'Oswald', color: "#fff" }}>Looking...</p>
-          ) : (
-            data.map((result, index) => (
-              <div className='search-hint-link' key={index}>
-                <p><Link to={`item/${result.name.replace(/ /g, '-')}`}>{result.name}</Link></p>
-              </div>
-            ))
-          )}
-        </div></>
+          <div className="search-hint">
+            {isLoading ? (
+              <p style={{ fontFamily: 'Oswald', color: "#fff" }}>Looking...</p>
+            ) : (
+              data.map((result, index) => (
+                <div className='search-hint-link' key={index}>
+                  <p><Link to={`item/${result.name.replace(/ /g, '-')}`}>{result.name}</Link></p>
+                </div>
+              ))
+            )}
+          </div>
+        </>
       ) : (
         <></>
       )}

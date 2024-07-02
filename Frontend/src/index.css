@@ -31,12 +31,12 @@ footer{
   display: flex;
   flex-direction: column;
   text-align: left;
-padding: 0.5rem;
+  padding: 0.5rem;
 }
 
 footer h1{
   margin: 0;
-  text-decoration: underline 12px #F7FF58;
+  text-decoration: underline 12px #064e3b;
   font-size: 4em;
 }
 
@@ -51,7 +51,7 @@ footer input{
   outline: none;
   font-size: 26px;
   border: none;
-  border-bottom: 2px solid #F7FF58;
+  border-bottom: 2px solid #064e3b;
   color: #f1f1f1;
 
 }
@@ -73,7 +73,7 @@ footer p{
 }
 
 .s-links img:hover{
-  color: #F7FF58;
+  color: #064e3b;
 }
 
 .legal {

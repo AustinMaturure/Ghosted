@@ -9,9 +9,10 @@
   background-color: rgb(35, 35, 35);
   border-radius: 2px;
   align-items: center;
-  box-shadow: 5px 5px #F7FF58;
+  box-shadow: 5px 5px #064e3b;
   justify-content: center;
-
+  transition: all 0.3s;
+  
 
 }
 
@@ -122,10 +123,25 @@ font-size: 1.7em;
   
 }
 
+.hide-nav{
+  max-height: 0;
+  padding: 0px;
+  
+}
+
+
 @media screen and (min-width: 1024px) {
   .items-cnt{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr}
+
+
+}
+
+@media screen and (min-width: 1280px) {
+  .items-cnt{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr}
 
 
 }
