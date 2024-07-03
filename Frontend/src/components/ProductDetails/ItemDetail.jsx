@@ -10,8 +10,6 @@ export default function ItemDetail() {
     const [errorMessage, setErrorMessage] = useState("");
     const [isLoading, setIsLoading] = useState(true);
 
-    // const productId = parseInt(id); // remove in production
-
     const fetchProductDetails = async () => {
         try {
             const response = await fetch(
@@ -23,19 +21,17 @@ export default function ItemDetail() {
             }
 
             const resData = await response.json();
-            console.log(resData);
-            setProductDetails(resData); // remove in production
+            setProductDetails(resData);
         } catch (err) {
             console.log(err);
             setErrorMessage("Error fetching product details" || err);
         } finally {
-            setIsLoading(true);
             setIsLoading(false);
         }
     };
 
     useEffect(() => {
-        fetchProductDetails(); // uncomment during production
+        fetchProductDetails();
     }, []);
 
     console.log("component re-render");

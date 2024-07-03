@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { calculateCartTotal, decryptString, encryptString } from "./util";
+const SECRET_KEY = import.meta.env.VITE_SECRET_KEY;
 
 const AddToCartForm = ({ productDetails }) => {
     const [productQuantity, setProductQuantity] = useState(1);
@@ -12,10 +13,15 @@ const AddToCartForm = ({ productDetails }) => {
         if (!localStorage.getItem("encrypted"))
             localStorage.setItem(
                 "encrypted",
-                JSON.stringify({ items: [], subtotal: 0 })
+                encryptString(
+                    JSON.stringify({ items: [], subtotal: 0 }),
+                    SECRET_KEY
+                )
             );
 
-        let cart = JSON.parse(localStorage.getItem("encrypted"));
+        let cart = JSON.parse(
+            decryptString(localStorage.getItem("encrypted"), SECRET_KEY)
+        );
 
         let currentItem = {
             userOptions: formData,
@@ -54,7 +60,10 @@ const AddToCartForm = ({ productDetails }) => {
                 subtotal: newSubTotal,
             };
 
-            localStorage.setItem("encrypted", JSON.stringify(updatedCart));
+            localStorage.setItem(
+                "encrypted",
+                encryptString(JSON.stringify(updatedCart), SECRET_KEY)
+            );
             return;
         }
 
@@ -63,7 +72,10 @@ const AddToCartForm = ({ productDetails }) => {
         let newSubTotal = calculateCartTotal(cart.items);
         let updatedCart = { items: cart.items, subtotal: newSubTotal };
 
-        localStorage.setItem("encrypted", JSON.stringify(updatedCart));
+        localStorage.setItem(
+            "encrypted",
+            encryptString(JSON.stringify(updatedCart), SECRET_KEY)
+        );
     };
 
     return (

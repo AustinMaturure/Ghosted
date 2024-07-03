@@ -4,29 +4,22 @@ import {
     decryptString,
     encryptString,
 } from "./ProductDetails/util";
+const SECRET_KEY = import.meta.env.VITE_SECRET_KEY;
 
 export default function Cart() {
     const [cart, setCart] = useState(
         localStorage.getItem("encrypted")
-            ? JSON.parse(localStorage.getItem("encrypted"))
+            ? JSON.parse(
+                  decryptString(localStorage.getItem("encrypted"), SECRET_KEY)
+              )
             : localStorage.setItem(
                   "encrypted",
-                  JSON.stringify({ items: [], subtotal: 0 })
+                  encryptString(
+                      JSON.stringify({ items: [], subtotal: 0 }),
+                      SECRET_KEY
+                  )
               )
     );
-    const secretKey =
-        "4*,-jbWg<NJZo0,XF*AAdS3F`;Z_fy&8" +
-        "qOFYH58oA8/!i8Y#;to4Z~o[w(`R<rtd" +
-        "3k3a7dwN88BBkj71JTSndYbPQht66yML";
-
-    const encryptedCart = encryptString(
-        localStorage.getItem("encrypted"),
-        secretKey
-    );
-
-    console.log(encryptedCart);
-    const decryptCart = decryptString(encryptedCart, secretKey);
-    console.log(decryptCart);
 
     if (cart.items.length < 1) {
         return <div>Your cart is empty</div>;
@@ -52,7 +45,10 @@ export default function Cart() {
         let newSubTotal = calculateCartTotal(updatedCartItems);
         let updatedCart = { items: updatedCartItems, subtotal: newSubTotal };
 
-        localStorage.setItem("encrypted", JSON.stringify(updatedCart));
+        localStorage.setItem(
+            "encrypted",
+            encryptString(JSON.stringify(updatedCart), SECRET_KEY)
+        );
         setCart(updatedCart);
     };
 
@@ -63,7 +59,10 @@ export default function Cart() {
         let newSubTotal = calculateCartTotal(itemRemoved);
 
         const updatedCart = { items: itemRemoved, subtotal: newSubTotal };
-        localStorage.setItem("encrypted", JSON.stringify(updatedCart));
+        localStorage.setItem(
+            "encrypted",
+            encryptString(JSON.stringify(updatedCart), SECRET_KEY)
+        );
         setCart(updatedCart);
     };
 
