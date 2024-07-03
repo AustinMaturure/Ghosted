@@ -1,12 +1,32 @@
-import { useEffect, useState } from "react";
-import { calculateCartTotal } from "./ProductDetails/util";
+import { useState } from "react";
+import {
+    calculateCartTotal,
+    decryptString,
+    encryptString,
+} from "./ProductDetails/util";
 
 export default function Cart() {
     const [cart, setCart] = useState(
         localStorage.getItem("encrypted")
             ? JSON.parse(localStorage.getItem("encrypted"))
-            : []
+            : localStorage.setItem(
+                  "encrypted",
+                  JSON.stringify({ items: [], subtotal: 0 })
+              )
     );
+    const secretKey =
+        "4*,-jbWg<NJZo0,XF*AAdS3F`;Z_fy&8" +
+        "qOFYH58oA8/!i8Y#;to4Z~o[w(`R<rtd" +
+        "3k3a7dwN88BBkj71JTSndYbPQht66yML";
+
+    const encryptedCart = encryptString(
+        localStorage.getItem("encrypted"),
+        secretKey
+    );
+
+    console.log(encryptedCart);
+    const decryptCart = decryptString(encryptedCart, secretKey);
+    console.log(decryptCart);
 
     if (cart.items.length < 1) {
         return <div>Your cart is empty</div>;
