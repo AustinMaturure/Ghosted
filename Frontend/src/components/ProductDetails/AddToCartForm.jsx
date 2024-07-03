@@ -1,48 +1,69 @@
 import React, { useState } from "react";
-import CryptoJS from "crypto-js";
+import { calculateCartTotal, decryptString, encryptString } from "./util";
 
 const AddToCartForm = ({ productDetails }) => {
     const [productQuantity, setProductQuantity] = useState(1);
-    const secretKey =
-        "4*,-jbWg<NJZo0,XF*AAdS3F`;Z_fy&8" +
-        "qOFYH58oA8/!i8Y#;to4Z~o[w(`R<rtd" +
-        "3k3a7dwN88BBkj71JTSndYbPQht66yML";
-
-    const encrypt = (plainText) => {
-        const cipherText = CryptoJS.AES.encrypt(
-            plainText,
-            secretKey
-        ).toString();
-        return cipherText;
-    };
-
-    const decrypt = (cipherText) => {
-        const bytes = CryptoJS.AES.decrypt(cipherText, secretKey);
-        const plainText = bytes.toString(CryptoJS.enc.Utf8);
-        return plainText;
-    };
-
-    const encryption = encrypt("My name is faiz");
-    const decryption = decrypt(encryption);
-    console.log(encryption);
-    console.log(decryption);
 
     const handleAddToCart = (e) => {
         e.preventDefault();
-        console.log("Add product Cart to cart/local storage");
         const fd = new FormData(e.target);
         const formData = Object.fromEntries(fd.entries());
-        const item = { ...formData, quantity: productQuantity };
-        var existing = localStorage.getItem("myFavoriteSandwich");
 
-        // If no existing data, use the value by itself
-        // Otherwise, add the new value to it
-        var data = existing ? existing + " and tuna" : "tuna";
+        if (!localStorage.getItem("encrypted"))
+            localStorage.setItem(
+                "encrypted",
+                JSON.stringify({ items: [], subtotal: 0 })
+            );
 
-        // Save back to localStorage
+        let cart = JSON.parse(localStorage.getItem("encrypted"));
 
-        console.log(item);
-        // at the end of adding this to local storage, reset product quantity
+        let currentItem = {
+            userOptions: formData,
+            currentProduct: productDetails,
+            total: productQuantity * productDetails.price,
+            quantity: productQuantity,
+        };
+
+        const itemExists = cart.items.find(
+            (item) =>
+                item.currentProduct.id === currentItem.currentProduct.id &&
+                item.userOptions.chosenColour === formData.chosenColour &&
+                item.userOptions.chosenSize === formData.chosenSize
+        );
+
+        if (itemExists) {
+            let updatedCartItems = cart.items.map((item) =>
+                item.currentProduct.id === currentItem.currentProduct.id &&
+                item.userOptions.chosenColour === formData.chosenColour &&
+                item.userOptions.chosenSize === formData.chosenSize
+                    ? {
+                          ...item,
+                          quantity: item.quantity + currentItem.quantity,
+                          total:
+                              (item.quantity + currentItem.quantity) *
+                              item.currentProduct.price,
+                      }
+                    : item
+            );
+
+            let newSubTotal = calculateCartTotal(updatedCartItems);
+            console.log(updatedCartItems);
+
+            let updatedCart = {
+                items: updatedCartItems,
+                subtotal: newSubTotal,
+            };
+
+            localStorage.setItem("encrypted", JSON.stringify(updatedCart));
+            return;
+        }
+
+        cart.items.push(currentItem);
+
+        let newSubTotal = calculateCartTotal(cart.items);
+        let updatedCart = { items: cart.items, subtotal: newSubTotal };
+
+        localStorage.setItem("encrypted", JSON.stringify(updatedCart));
     };
 
     return (
@@ -93,11 +114,10 @@ const AddToCartForm = ({ productDetails }) => {
                     <button
                         type="button"
                         className=""
+                        disabled={productQuantity === 1}
                         onClick={() =>
-                            setProductQuantity((prevQuantity) =>
-                                prevQuantity >= 2
-                                    ? prevQuantity - 1
-                                    : prevQuantity
+                            setProductQuantity(
+                                (prevQuantity) => prevQuantity - 1
                             )
                         }>
                         -
