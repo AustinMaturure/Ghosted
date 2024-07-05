@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import '../css/Navbar.css';
 import deliveryImg from '../assets/delivery.svg';
 import closeImg from '../assets/close.svg';
@@ -8,6 +8,7 @@ import search from '../assets/logo/search.svg';
 import menu from '../assets/logo/menu.svg';
 import cart from '../assets/logo/cart1.svg';
 
+
 export default function Navbar({ isOpen, toggleNavbar }) {
   const [visible, setVisibility] = useState(true);
   const [svisible, setsVisibility] = useState(true);
@@ -15,6 +16,7 @@ export default function Navbar({ isOpen, toggleNavbar }) {
   const [query, setQuery] = useState('');
   const [img, setImg] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+
 
 
   useEffect(() => {
@@ -44,6 +46,10 @@ export default function Navbar({ isOpen, toggleNavbar }) {
   const toggleHamImg = () => {
     setImg(!img);
   };
+  useEffect(() => {
+
+    setImg(false)
+      }, [useLocation()]);
 
   return (
     <>
@@ -61,7 +67,7 @@ export default function Navbar({ isOpen, toggleNavbar }) {
       {/* Navbar */}
       <nav className='navbar'>
         <div className="menu-img-cnt" onClick={toggleNavbar}>
-          <img onClick={toggleHamImg} src={`${img ? closeImg : menu}`} alt="Menu" />
+          <img onClick={useLocation().pathname === '/' ? toggleHamImg : {}} src={`${img ? closeImg : menu}`} alt="Menu" />
         </div>
         <Link to={'/'}>
           <div className="logo-img-cnt">
@@ -100,15 +106,15 @@ export default function Navbar({ isOpen, toggleNavbar }) {
             </div>
           </div>
           <div className="search-hint">
-            {isLoading ? (
+            {isLoading && query.length > 1 ? (
               <p style={{ fontFamily: 'Oswald', color: "#fff" }}>Looking...</p>
-            ) : (
+            ) : ( query.length > 1 ? 
               data.map((result, index) => (
                 <div className='search-hint-link' key={index}>
                   <p><Link to={`item/${result.name.replace(/ /g, '-')}`}>{result.name}</Link></p>
                 </div>
               ))
-            )}
+            : <></>)}
           </div>
         </>
       ) : (
