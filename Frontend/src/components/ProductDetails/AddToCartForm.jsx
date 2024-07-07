@@ -2,7 +2,7 @@ import { useState } from "react";
 import { calculateCartTotal, decryptString, encryptString } from "./util";
 const SECRET_KEY = import.meta.env.VITE_SECRET_KEY;
 
-const AddToCartForm = ({ productDetails }) => {
+const AddToCartForm = ({ productDetails, setModalOpened, modalOpened }) => {
     const [productQuantity, setProductQuantity] = useState(1);
 
     const handleAddToCart = (e) => {
@@ -64,6 +64,7 @@ const AddToCartForm = ({ productDetails }) => {
                 "encrypted",
                 encryptString(JSON.stringify(updatedCart), SECRET_KEY)
             );
+            setModalOpened(true);
             return;
         }
 
@@ -71,7 +72,7 @@ const AddToCartForm = ({ productDetails }) => {
 
         let newSubTotal = calculateCartTotal(cart.items);
         let updatedCart = { items: cart.items, subtotal: newSubTotal };
-
+        setModalOpened(true);
         localStorage.setItem(
             "encrypted",
             encryptString(JSON.stringify(updatedCart), SECRET_KEY)
@@ -84,7 +85,7 @@ const AddToCartForm = ({ productDetails }) => {
                 <label
                     className="text-sm sm:text-base text-gray-500"
                     htmlFor="chosenColour">
-                    Colours:{" "}
+                    Colours{" "}
                 </label>
 
                 <select
@@ -103,7 +104,7 @@ const AddToCartForm = ({ productDetails }) => {
                 <label
                     className="text-sm sm:text-base text-gray-500"
                     htmlFor="chosenSize">
-                    Size:
+                    Size
                 </label>
 
                 <select
@@ -120,7 +121,7 @@ const AddToCartForm = ({ productDetails }) => {
 
             <div className="grid gap-1">
                 <label className="text-sm sm:text-base text-gray-500">
-                    Quantity:{" "}
+                    Quantity{" "}
                 </label>
                 <div className="w-full py-3 px-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] rounded-lg flex justify-between">
                     <button
@@ -147,12 +148,22 @@ const AddToCartForm = ({ productDetails }) => {
                     </button>
                 </div>
             </div>
-
-            <button
-                type="submit"
-                className="w-full bg-blue-600 text-gray-100 py-3 rounded-lg font-medium hover:bg-blue-500">
-                Add to cart
-            </button>
+            <div className="relative">
+                <button
+                    type="submit"
+                    className="w-full bg-blue-600 text-gray-100 py-3 rounded-lg font-medium hover:bg-blue-500 disabled:cursor-not-allowed"
+                    onClick={() =>
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                        })
+                    }>
+                    Add to cart
+                </button>
+                {modalOpened && (
+                    <div className="bg-black h-full opacity-25 w-full absolute right-0 top-0 rounded-lg hover:cursor-not-allowed"></div>
+                )}
+            </div>
         </form>
     );
 };

@@ -17,3 +17,24 @@ export const calculateCartTotal = (items) => {
 
     return total;
 };
+
+export const generateInvoice = (cart) => {
+    let invoice = "Hello there. I would like to place an order for:\n\n";
+
+    cart.items.map(
+        (item) =>
+            (invoice += `${cart.items.indexOf(item) + 1}. Product ID: ${
+                item.currentProduct.id
+            } - ${item.currentProduct.name} - Price: R${
+                item.currentProduct.price
+            } - Quantity: ${item.quantity} - Size: ${
+                item.userOptions.chosenSize
+            } - Colour: ${item.userOptions.chosenColour} - Item Sub Total: R${
+                item.total
+            }\n`)
+    );
+
+    invoice += `\nCart Sub Total(Excluding Delivery): R${cart.subtotal}`;
+
+    return invoice;
+};

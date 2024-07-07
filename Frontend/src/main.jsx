@@ -6,7 +6,7 @@ import Navbar from "./components/Navbar.jsx";
 import Home from "./components/Home.jsx";
 import Footer from "./components/Footer.jsx";
 import ItemDetail from "./components/ProductDetails/ItemDetail.jsx";
-import Cart from "./components/Cart.jsx";
+import Cart from "./components/Cart/Cart.jsx";
 import PageNotFound from "./components/PageNotFound.jsx";
 
 import "./index.css";
