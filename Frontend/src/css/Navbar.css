@@ -84,9 +84,10 @@
     display: none;
     justify-content: center;
     border-top: 1px solid var(--text-color);
-    height: 2rem;
+    /* height: 2rem; */
     padding: 1rem;
 }
+
 .search-hide {
     display: flex;
     justify-items: center;

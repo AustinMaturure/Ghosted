@@ -98,10 +98,10 @@ export default function Navbar({ isOpen, toggleNavbar }) {
             {svisible ? (
                 <>
                     <div
-                        className={`search-box ${
+                        className={`search-box  ${
                             !svisible ? "" : "search-hide"
                         }`}>
-                        <div className="search">
+                        <div className="search ">
                             <input
                                 className="search-ipt"
                                 type="text"

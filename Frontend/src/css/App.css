@@ -77,8 +77,10 @@
 }
 
 .product-img-cnt {
+    margin-bottom: 0.8rem;
     height: 18rem;
-    background-color: rgba(207, 207, 207, 0.838);
+    background-color: #f3f4f6;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
     display: flex;
     border-radius: 12px;
     align-items: center;
