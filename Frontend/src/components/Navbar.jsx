@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "../css/Navbar.css";
 import deliveryImg from "../assets/delivery.svg";
 import closeImg from "../assets/close.svg";
@@ -45,6 +45,9 @@ export default function Navbar({ isOpen, toggleNavbar }) {
     const toggleHamImg = () => {
         setImg(!img);
     };
+    useEffect(() => {
+        setImg(false);
+    }, [useLocation()]);
 
     return (
         <>
@@ -65,7 +68,9 @@ export default function Navbar({ isOpen, toggleNavbar }) {
             <nav className="navbar">
                 <div className="menu-img-cnt" onClick={toggleNavbar}>
                     <img
-                        onClick={toggleHamImg}
+                        onClick={
+                            useLocation().pathname === "/" ? toggleHamImg : {}
+                        }
                         src={`${img ? closeImg : menu}`}
                         alt="Menu"
                     />
@@ -115,11 +120,11 @@ export default function Navbar({ isOpen, toggleNavbar }) {
                         </div>
                     </div>
                     <div className="search-hint">
-                        {isLoading ? (
+                        {isLoading && query.length > 1 ? (
                             <p style={{ fontFamily: "Oswald", color: "#fff" }}>
                                 Looking...
                             </p>
-                        ) : (
+                        ) : query.length > 1 ? (
                             data.map((result, index) => (
                                 <div className="search-hint-link" key={index}>
                                     <p>
@@ -133,6 +138,8 @@ export default function Navbar({ isOpen, toggleNavbar }) {
                                     </p>
                                 </div>
                             ))
+                        ) : (
+                            <></>
                         )}
                     </div>
                 </>

@@ -57,25 +57,36 @@ function Home({ isOpen, setIsOpen }) {
         </div>
     ) : (
         <div className="home-container">
-            <div className={`filters flex ${isOpen ? "show-nav" : "hide-nav"}`}>
-                <div className="All" onClick={() => setCategory(null)}>
-                    <h1>All</h1>
-                </div>
+            {location.pathname === "/" ? (
                 <div
-                    className="Sweaters"
-                    onClick={() => setCategory("sweaters")}>
-                    <h1>Sweaters</h1>
+                    className={`filters flex ${
+                        isOpen ? "show-nav" : "hide-nav"
+                    }`}>
+                    <div className="All" onClick={() => setCategory(null)}>
+                        <h1>All</h1>
+                    </div>
+                    <div
+                        className="Sweaters"
+                        onClick={() => setCategory("sweaters")}>
+                        <h1>Sweaters</h1>
+                    </div>
+                    <div
+                        className="Shirts"
+                        onClick={() => setCategory("shirts")}>
+                        <h1>Shirts</h1>
+                    </div>
+                    <div className="Caps" onClick={() => setCategory("caps")}>
+                        <h1>Caps</h1>
+                    </div>
+                    <div
+                        className="Hoodies"
+                        onClick={() => setCategory("hoodies")}>
+                        <h1>Hoodies</h1>
+                    </div>
                 </div>
-                <div className="Shirts" onClick={() => setCategory("shirts")}>
-                    <h1>Shirts</h1>
-                </div>
-                <div className="Caps" onClick={() => setCategory("caps")}>
-                    <h1>Caps</h1>
-                </div>
-                <div className="Hoodies" onClick={() => setCategory("hoodies")}>
-                    <h1>Hoodies</h1>
-                </div>
-            </div>
+            ) : (
+                <></>
+            )}
             <p className="items-hint">
                 You are Currently Being Shown all {filteredItems.length} Items.
             </p>
