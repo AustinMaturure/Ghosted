@@ -19,9 +19,10 @@ export default function Footer() {
         
         {/* Social media links */}
         <div className='s-links'>
+          <div className="s-link">
           <a className="social-link" href="https://tr.ee/IXR7dqbKw4" target="_blank" rel="noopener noreferrer">
             <img src={igImg} alt="Instagram" />
-          </a>
+          </a></div>
           <img src={wpImg} alt="WhatsApp" />
           <img src={fbImg} alt="Facebook" />
           <img src={ttImg} alt="Twitter" />

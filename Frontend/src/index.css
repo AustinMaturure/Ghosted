@@ -53,7 +53,7 @@ footer input{
   border: none;
   border-bottom: 2px solid #064e3b;
   color: #f1f1f1;
-
+  text-wrap: wrap;
 }
 
 footer p{
@@ -70,10 +70,6 @@ footer p{
 .s-links img{
   width: 40px;
   cursor: pointer;
-}
-
-.s-links img:hover{
-  color: #064e3b;
 }
 
 .legal {

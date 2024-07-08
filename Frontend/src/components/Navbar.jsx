@@ -105,6 +105,7 @@ export default function Navbar({ isOpen, toggleNavbar }) {
               </button>
             </div>
           </div>
+          { query.length > 0 ? 
           <div className="search-hint">
             {isLoading && query.length > 1 ? (
               <p style={{ fontFamily: 'Oswald', color: "#fff" }}>Looking...</p>
@@ -115,7 +116,7 @@ export default function Navbar({ isOpen, toggleNavbar }) {
                 </div>
               ))
             : <></>)}
-          </div>
+          </div>:<></>}
         </>
       ) : (
         <></>
