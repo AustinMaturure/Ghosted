@@ -70,13 +70,18 @@ export default function Cart() {
     if (cart.items.length < 1) {
         return (
             <div className="my-10 mx-auto px-10 grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-10">
-                <div className="text-gray-600">
-                    Your Cart Is Empty. Go to our{" "}
-                    <Link
-                        to={"/"}
-                        className="cursor-pointer underline underline-offset-2 hover:text-blue-500">
-                        Shop
-                    </Link>
+                <div className="">
+                    <div className="text-lg md:text-xl font-bold mb-3">
+                        My Cart
+                    </div>
+                    <div className="text-gray-600">
+                        Your Cart Is Empty. Go to our{" "}
+                        <Link
+                            to={"/"}
+                            className="cursor-pointer underline underline-offset-2 hover:text-blue-500">
+                            Shop
+                        </Link>
+                    </div>
                 </div>
                 <div>
                     <div className="text-xl my-3 font-bold">Summary</div>
