@@ -73,7 +73,7 @@ const ShowCart = ({ cart, setModalOpened, modalOpened }) => {
                 </div>
             </div>
             <Link to={"/cart"}>
-                <button className="w-full bg-blue-600 text-gray-100 py-3 rounded-lg font-medium hover:bg-blue-500">
+                <button className="w-full text-gray-100 py-3 rounded-lg font-medium bg-teal-800 hover:bg-teal-700">
                     View Cart ({cart.items.length})
                 </button>
             </Link>

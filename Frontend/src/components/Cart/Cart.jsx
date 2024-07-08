@@ -84,9 +84,9 @@ export default function Cart() {
                     </div>
                 </div>
                 <div>
-                    <div className="text-xl my-3 font-bold">Summary</div>
+                    <div className="text-xl my-3 font-bold">Order Summary</div>
                     <div className="flex justify-between items-center font-semibold mb-4">
-                        <div>Subtotal</div>
+                        <div>Sub Total(Excluding Delivery)</div>
                         <div> R{cart.subtotal}</div>
                     </div>
                     <div className="grid gap-5">
@@ -132,7 +132,7 @@ export default function Cart() {
         <div className="container my-10 mx-auto px-3 grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-12">
             <div>
                 <div className="flex justify-between items-center mb-3">
-                    <div className="text-lg md:text-xl font-bold">My Cart</div>
+                    <div className="text-lg md:text-xl font-bold">My Cart </div>
                     <div className="sm:hidden">{cart.items.length} items</div>
                 </div>
                 <div className="">
@@ -219,9 +219,11 @@ export default function Cart() {
                 </div>
             </div>
             <div className="lg:border-l lg:pl-4">
-                <div className="text-lg md:text-xl my-3 font-bold">Summary</div>
+                <div className="text-lg md:text-xl my-3 font-bold">
+                    Order Summary
+                </div>
                 <div className="flex justify-between items-center font-semibold mb-4">
-                    <div>Subtotal</div>
+                    <div>Sub Total(Excluding delivery)</div>
                     <div> R{cart.subtotal}</div>
                 </div>
                 <div className="grid gap-5">
