@@ -53,7 +53,6 @@ const AddToCartForm = ({ productDetails, setModalOpened, modalOpened }) => {
             );
 
             let newSubTotal = calculateCartTotal(updatedCartItems);
-            console.log(updatedCartItems);
 
             let updatedCart = {
                 items: updatedCartItems,

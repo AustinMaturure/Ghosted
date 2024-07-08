@@ -49,7 +49,7 @@ export default function ItemDetail() {
             const resData = await response.json();
             setProductDetails(resData);
         } catch (err) {
-            console.log(err);
+            // console.log(err);
             setErrorMessage("Error fetching product details" || err);
         } finally {
             setIsLoading(false);
