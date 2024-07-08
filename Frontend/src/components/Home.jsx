@@ -74,7 +74,7 @@ function Home({ isOpen, setIsOpen }) {
                 <h1 className="product-price">R {item.price}</h1>
               </div>
             </Link>
-          ))}
+          )).reverse()}
         </section>
         <hr />
         <p style={{'fontFamily': "satoshi", fontWeight: "bold", textAlign: "right"}}>End of List.</p>

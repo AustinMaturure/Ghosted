@@ -162,9 +162,17 @@ font-size: 1.7em;
  .filters{
   justify-content: center;
  }
+
 }
 
-@media screen and (max-width: 390px) {
+@media  screen and (max-width: 450px) {
+    .product-img-cnt img {
+        min-height: 85%;
+    }
+    
+}
+
+@media screen and (max-width: 388px) {
   .items-cnt{
     display: grid;
     grid-template-columns: 1fr}
