@@ -14,7 +14,7 @@
 
 .delivery-banner p {
     font-size: 1rem;
-    font-family: "satoshi";
+    /* font-family: "satoshi"; */
 }
 
 .delivery-img-cnt,
@@ -97,7 +97,7 @@
 
 .search-hint a {
     color: #fff;
-    font-family: "Oswald";
+    /* font-family: "Oswald"; */
 }
 .search-hint,
 .search-hint-link {
@@ -129,7 +129,7 @@
 }
 .search-box input {
     background-color: transparent;
-    font-family: "Oswald";
+    /* font-family: "Oswald"; */
     color: var(--text-color);
     border: none;
     border-bottom: 2px solid #064e3b;

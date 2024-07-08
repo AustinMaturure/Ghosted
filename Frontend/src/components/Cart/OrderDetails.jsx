@@ -59,7 +59,7 @@ const OrderDetails = ({ cart }) => {
             </div>
             <button
                 disabled={cart.subtotal === 0}
-                className="w-full bg-teal-800 hover:bg-teal-700 text-gray-50 py-2 rounded-lg disabled:bg-blue-300 disabled:cursor-not-allowed"
+                className="w-full bg-teal-800 hover:bg-teal-700 text-gray-100 py-3 rounded-lg font-medium disabled:cursor-not-allowed"
                 onClick={async () => {
                     await navigator.clipboard.writeText(customerOrder);
                     setTextCopied(true);

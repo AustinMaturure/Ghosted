@@ -23,7 +23,7 @@ body {
 }
 
 h1 {
-    font-family: "Oswald";
+    /* font-family: "Oswald"; */
     color: #f1f1f1;
     font-size: 1.5em;
     margin: 0px;
@@ -46,11 +46,11 @@ footer h1 {
 }
 
 footer h2 {
-    font-family: "Oswald";
+    /* font-family: "Oswald"; */
 }
 
 footer input {
-    font-family: "Oswald";
+    /* font-family: "Oswald"; */
     background-color: transparent;
     outline: none;
     font-size: 26px;
@@ -81,5 +81,5 @@ footer p {
 
 .legal {
     margin-top: 2rem;
-    font-family: "satoshi";
+    /* font-family: "satoshi"; */
 }
