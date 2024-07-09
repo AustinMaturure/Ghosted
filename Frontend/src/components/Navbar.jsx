@@ -49,6 +49,7 @@ export default function Navbar({ isOpen, toggleNavbar }) {
   useEffect(() => {
 
     setImg(false)
+    setsVisibility(false)
       }, [useLocation()]);
 
   return (
@@ -112,7 +113,7 @@ export default function Navbar({ isOpen, toggleNavbar }) {
             ) : ( query.length > 1 ? 
               data.map((result, index) => (
                 <div className='search-hint-link' key={index}>
-                  <p><Link to={`item/${result.name.replace(/ /g, '-')}`}>{result.name}</Link></p>
+                  <p><Link to={`item/${result.name.toLowerCase().replace(/ /g, '-').replace(/[^a-z0-9_-]/g, '')}`}>{result.name}</Link></p>
                 </div>
               ))
             : <></>)}

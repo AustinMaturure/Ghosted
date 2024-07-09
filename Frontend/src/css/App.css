@@ -58,7 +58,7 @@ font-size: 1.7em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: flex-start;
+
 }
 
 .product:hover .product-img-cnt img{
@@ -115,6 +115,14 @@ font-size: 1.7em;
   object-fit: cover;
   transition: transform 0.1s;
 
+}
+
+.items-cnt{
+    padding:0 1.5rem;
+}
+
+.items-cnt a{
+    width: 100%;
 }
 
 .product-price{
