@@ -15,7 +15,7 @@ export default function Footer() {
         <h2>{`Feel Free to Write to Us (We Promise we won't Ghost you.)`}</h2>
         
         {/* Input field for message */}
-        <input type="email" placeholder="Write Message..."></input>
+        <input type="email" value="Write Us @ghostedza.gmail.com"></input>
         
         {/* Social media links */}
         <div className='s-links'>

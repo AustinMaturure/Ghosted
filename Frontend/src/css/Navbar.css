@@ -92,11 +92,7 @@ align-items: center;
 
 }
 
-.s-link{
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
+
 
 .search-hint{
     position: relative;
