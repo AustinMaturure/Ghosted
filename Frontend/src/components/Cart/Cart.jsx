@@ -9,6 +9,7 @@ import fbImg from "../../assets/fb.svg";
 import wpImg from "../../assets/wp.svg";
 import OrderDetails from "./OrderDetails";
 import { Link } from "react-router-dom";
+import { MoveRight } from "lucide-react";
 
 const SECRET_KEY = import.meta.env.VITE_SECRET_KEY;
 
@@ -72,7 +73,7 @@ export default function Cart() {
         return (
             <div className="container mx-auto mt-8 m-16 lg:mt-16 lg:mb-32 px-4 grid gap-6 lg:gap-20 grid-cols-1 lg:grid-cols-2">
                 <div className="">
-                    <div className="text-lg md:text-xl font-bold mb-3">
+                    <div className="text-lg md:text-xl font-bold mb-3 heading-font">
                         My Cart
                     </div>
                     <div className="text-stone-600">
@@ -90,20 +91,40 @@ export default function Cart() {
                         Order Summary
                     </div>
                     <div className="flex justify-between items-center font-semibold mb-4 md:mb-5 lg:mb-6">
-                        <div>Sub Total(Excluding delivery)</div>
+                        <div>Sub Total (Excluding Delivery)</div>
                         <div> R{cart.subtotal}</div>
                     </div>
                     <div className="grid gap-5">
                         <OrderDetails cart={cart} />
                         <div className="grid gap-3">
-                            <div className="font-bold text-base md:text-lg ">
-                                Contact Us{" "}
+                            <div className="font-bold text-base md:text-lg">
+                                Place Your Order{" "}
                             </div>
-                            <div className="">
-                                Copy your order and contact us on one of our
-                                socials below.
+                            <div className="grid gap-2 ">
+                                <div className="flex gap-2 md:gap-1 items-center">
+                                    <div className="font-semibold rounded-full w-8  h-8 flex items-center justify-center bg-teal-800 text-stone-50">
+                                        <div className="text-lg h-4 w-4 flex items-center justify-center">
+                                            1
+                                        </div>
+                                    </div>
+                                    <MoveRight className="text-teal-800 hidden sm:block" />
+                                    <div className="text-base lg:text-lg h-10 flex items-center">
+                                        Copy your order
+                                    </div>
+                                </div>
+                                <div className="flex gap-2 md:gap-1 items-center">
+                                    <div className="font-semibold rounded-full w-8  h-8 flex items-center justify-center bg-teal-800 text-stone-50">
+                                        <div className="text-lg h-4 w-4 flex items-center justify-center">
+                                            2
+                                        </div>
+                                    </div>
+                                    <MoveRight className="text-teal-800 hidden sm:block" />
+                                    <div className="text-base lg:text-lg h-10 flex items-center">
+                                        Contact us on one of our socials below
+                                    </div>
+                                </div>
                             </div>
-                            <div className="flex">
+                            <div className="flex gap-1">
                                 <a
                                     className=""
                                     href=""
@@ -112,7 +133,7 @@ export default function Cart() {
                                     <img
                                         src={igImg}
                                         alt="Instagram"
-                                        className="w-8 lg:w-12"
+                                        className="w-10 lg:w-12"
                                     />
                                 </a>
                                 <a
@@ -123,7 +144,7 @@ export default function Cart() {
                                     <img
                                         src={fbImg}
                                         alt="Facebook"
-                                        className="w-8 lg:w-12"
+                                        className="w-10 lg:w-12"
                                     />
                                 </a>
                                 <a
@@ -134,7 +155,7 @@ export default function Cart() {
                                     <img
                                         src={wpImg}
                                         alt="Whatsapp Logo"
-                                        className="w-8 lg:w-12"
+                                        className="w-10 lg:w-12"
                                     />
                                 </a>
                             </div>
@@ -146,10 +167,12 @@ export default function Cart() {
     }
 
     return (
-        <div className="container mx-auto mt-8 m-16 lg:mt-16 lg:mb-32 px-4 grid gap-6 lg:gap-20 grid-cols-1 lg:grid-cols-2 lg:relative">
+        <div className="container mx-auto mt-8 m-16 lg:mt-16 lg:mb-32 px-4 grid gap-6 lg:gap-20 grid-cols-1 lg:grid-cols-2 relative">
             <div>
                 <div className="flex justify-between items-center mb-3 md:mb-5 lg:mb-6">
-                    <div className="text-lg md:text-xl font-bold">My Cart </div>
+                    <div className="text-lg md:text-xl font-bold heading-font">
+                        My Cart{" "}
+                    </div>
                     <div className="sm:hidden">{cart.items.length} items</div>
                 </div>
                 <div className="">
@@ -229,7 +252,7 @@ export default function Cart() {
                                     </div>
                                     <div>
                                         <button
-                                            className="underline underline-offset-1 text-stone-600 hover:text-stone-500"
+                                            className="underline underline-offset-2 text-stone-600 hover:text-teal-700"
                                             onClick={() =>
                                                 handleRemoveItem(index)
                                             }>
@@ -247,20 +270,40 @@ export default function Cart() {
                     Order Summary
                 </div>
                 <div className="flex justify-between text-sm md:text-base items-center font-semibold mb-4 md:mb-5 lg:mb-6">
-                    <div>Sub Total(Excluding delivery)</div>
+                    <div>Sub Total (Excluding Delivery)</div>
                     <div> R{cart.subtotal}</div>
                 </div>
                 <div className="grid gap-3 lg:gap-6">
                     <OrderDetails cart={cart} />
-                    <div className="grid gap-3">
+                    <div className="grid gap-6">
                         <div className="font-bold text-base md:text-lg">
-                            Contact Us{" "}
+                            Place Your Order{" "}
                         </div>
-                        <div className="">
-                            Copy your order and contact us on one of our socials
-                            below.
+                        <div className="grid gap-2 ">
+                            <div className="flex gap-2 md:gap-1 items-center">
+                                <div className="font-semibold rounded-full w-8  h-8 flex items-center justify-center bg-teal-800 text-stone-50">
+                                    <div className="text-lg h-4 w-4 flex items-center justify-center">
+                                        1
+                                    </div>
+                                </div>
+                                <MoveRight className="text-teal-800 hidden sm:block" />
+                                <div className="text-base lg:text-lg h-10 flex items-center">
+                                    Copy your order
+                                </div>
+                            </div>
+                            <div className="flex gap-2 md:gap-1 items-center">
+                                <div className="font-semibold rounded-full w-8  h-8 flex items-center justify-center bg-teal-800 text-stone-50">
+                                    <div className="text-lg h-4 w-4 flex items-center justify-center">
+                                        2
+                                    </div>
+                                </div>
+                                <MoveRight className="text-teal-800 hidden sm:block" />
+                                <div className="text-base lg:text-lg h-10 flex items-center">
+                                    Contact us on one of our socials below
+                                </div>
+                            </div>
                         </div>
-                        <div className="flex">
+                        <div className="flex gap-1">
                             <a
                                 className=""
                                 href=""
@@ -269,7 +312,7 @@ export default function Cart() {
                                 <img
                                     src={igImg}
                                     alt="Instagram"
-                                    className="w-8 lg:w-12"
+                                    className="w-10 lg:w-12"
                                 />
                             </a>
                             <a
@@ -280,7 +323,7 @@ export default function Cart() {
                                 <img
                                     src={fbImg}
                                     alt="Facebook"
-                                    className="w-8 lg:w-12"
+                                    className="w-10 lg:w-12"
                                 />
                             </a>
                             <a
@@ -291,7 +334,7 @@ export default function Cart() {
                                 <img
                                     src={wpImg}
                                     alt="Whatsapp Logo"
-                                    className="w-8 lg:w-12"
+                                    className="w-10 lg:w-12"
                                 />
                             </a>
                         </div>

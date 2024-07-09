@@ -2,7 +2,7 @@ import { useState } from "react";
 import { generateInvoice } from "../ProductDetails/util";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
-const OrderDetails = ({ cart }) => {
+const OrderDetails = ({ cart, handleOrderCopied }) => {
     const [textCopied, setTextCopied] = useState(false);
     const [expandText, setExpandText] = useState(false);
 
@@ -31,7 +31,7 @@ const OrderDetails = ({ cart }) => {
         <div className="grid gap-4 md:gap-5 lg:gap-6">
             <div className="relative py-8 px-4 rounded-lg bg-stone-50">
                 <div
-                    className={`text-sm sm:text-base  overflow-y-auto text-stone-600 ${
+                    className={`text-sm sm:text-base overflow-y-auto text-stone-600 overscroll-contain ${
                         expandText ? "block" : "max-h-20 lg:max-h-32"
                     }`}>
                     {customerOrderLayout}
@@ -45,7 +45,7 @@ const OrderDetails = ({ cart }) => {
                         setTextCopied(true);
                         setTimeout(() => {
                             setTextCopied(false);
-                        }, 2000);
+                        }, 1500);
                     }}>
                     {!textCopied ? "Copy" : "Copied"}
                 </button>
@@ -61,13 +61,18 @@ const OrderDetails = ({ cart }) => {
             <div className="relative">
                 <button
                     disabled={cart.subtotal === 0 || textCopied}
-                    className="w-full bg-teal-800 hover:bg-teal-700 text-stone-100 py-3 rounded-lg font-medium disabled:cursor-not-allowed"
+                    className="w-full bg-teal-800 hover:bg-teal-700 text-stone-100 py-3 rounded-lg font-medium disabled:cursor-not-allowed transition-all ease-out"
                     onClick={async () => {
                         await navigator.clipboard.writeText(customerOrder);
                         setTextCopied(true);
                         setTimeout(() => {
                             setTextCopied(false);
-                        }, 3000);
+                        }, 1500);
+                        handleOrderCopied();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: "smooth",
+                        });
                     }}>
                     {!textCopied ? "Copy Order" : "Order Copied"}
                 </button>

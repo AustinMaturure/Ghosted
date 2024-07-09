@@ -4,18 +4,19 @@ import { X } from "lucide-react";
 const ShowCart = ({ cart, setModalOpened, modalOpened }) => {
     return (
         <div
-            className={`${modalOpened ? "grid" : " hidden"} absolute top-1 
-                 w-full bg-white px-3 py-4 gap-3 sm:w-96 sm:right-0 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] rounded-lg`}>
+            className={`${modalOpened ? "grid" : " hidden"} absolute top-1
+                 w-full sm:w-96 bg-white px-3 py-4 gap-3  sm:right-0  rounded-lg shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px]`}>
             <div className="flex justify-between px-4 py-2">
                 <div className="flex justify-center w-full">
-                    <div>Added To Cart</div>
+                    <div className="font-semibold">Added To Cart</div>
                 </div>
                 <X
                     className="cursor-pointer"
                     onClick={() => setModalOpened(false)}
                 />
             </div>
-            <div className={`overflow-y-auto h-60 border-t border-b py-2`}>
+            <div
+                className={`overflow-y-auto h-60 border-t border-b py-2 overscroll-contain`}>
                 <div className="">
                     <div className="grid gap-2 ">
                         {cart.items.map((item, index) => (
@@ -53,7 +54,14 @@ const ShowCart = ({ cart, setModalOpened, modalOpened }) => {
                                         </span>
                                         <span>
                                             Colour:{" "}
-                                            {item.userOptions.chosenColour}
+                                            {item.userOptions.chosenColour
+                                                .charAt(0)
+                                                .toUpperCase() +
+                                                item.userOptions.chosenColour.substring(
+                                                    1,
+                                                    item.userOptions
+                                                        .chosenColour.length
+                                                )}
                                         </span>
                                     </div>
 

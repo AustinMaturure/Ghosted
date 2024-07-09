@@ -70,9 +70,9 @@ export default function ItemDetail() {
         );
 
     return (
-        <main className="container mx-auto flex flex-col lg:flex-row gap-6 lg:gap-12 sm:px-1 py-12 lg:py-0 lg:px-24 relative">
+        <main className="container mx-auto flex flex-col lg:flex-row gap-6 lg:gap-12 sm:px-1 py-12 lg:py-0 relative">
             <div className="flex justify-between text-xl px-6 md:px-20 font-medium lg:hidden">
-                <div className=" uppercase tracking-wide">
+                <div className="uppercase tracking-wide heading-font">
                     {productDetails.name}
                 </div>
                 <div className="font-bold">R{productDetails.price}</div>
@@ -80,7 +80,7 @@ export default function ItemDetail() {
             <ProductImages images={productDetails.images} />
             <div className="lg:border-l-[0.75px] lg:border-r-[0.75px] sm:border-stone-100 lg:py-10 flex flex-col gap-6 lg:gap-8">
                 <div className="hidden justify-between text-xl px-6 font-medium lg:text-2xl lg:flex">
-                    <div className=" uppercase tracking-wide">
+                    <div className=" uppercase tracking-wide heading-font">
                         {productDetails.name}
                     </div>
                     <div className="font-bold">R{productDetails.price}</div>

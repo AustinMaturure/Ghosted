@@ -13,9 +13,14 @@ a {
     text-decoration: none;
 }
 
+.heading-font {
+    font-family: "Oswald", "Open Sans", "Helvetica Neue", sans-serif !important;
+}
+
 html {
     --background-color: #1f1f1f;
     --text-color: #f1f1f1;
+    font-family: "satoshi", "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
@@ -23,7 +28,8 @@ body {
 }
 
 h1 {
-    font-family: "Oswald";
+    font-family: "Oswald", "Open Sans", "Helvetica Neue", sans-serif,
+        "sans-serif";
     color: #f1f1f1;
     font-size: 1.5em;
     margin: 0px;
@@ -46,11 +52,11 @@ footer h1 {
 }
 
 footer h2 {
-    font-family: "Oswald";
+    font-family: "Oswald", "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 footer input {
-    font-family: "Oswald";
+    font-family: "Oswald", "Open Sans", "Helvetica Neue", sans-serif;
     background-color: transparent;
     outline: none;
     font-size: 26px;
@@ -81,5 +87,5 @@ footer p {
 
 .legal {
     margin-top: 2rem;
-    font-family: "satoshi";
+    font-family: "satoshi", "Open Sans", "Helvetica Neue", sans-serif;
 }
