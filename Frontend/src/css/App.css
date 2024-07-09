@@ -119,6 +119,7 @@ font-size: 1.7em;
 
 .items-cnt{
     padding:0 1.5rem;
+    column-gap: 2rem
 }
 
 .items-cnt a{
