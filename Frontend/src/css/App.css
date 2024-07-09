@@ -162,6 +162,9 @@ font-size: 1.7em;
     padding: 8px;
     box-sizing: border-box;
   }
+  .items-cnt{
+    padding: 0 1rem !important;
+  }
 
 
 }
@@ -183,7 +186,9 @@ font-size: 1.7em;
 @media screen and (max-width: 388px) {
   .items-cnt{
     display: grid;
-    grid-template-columns: 1fr}
+    grid-template-columns: 1fr;
+    padding:0px;
+}
 
 
 }
