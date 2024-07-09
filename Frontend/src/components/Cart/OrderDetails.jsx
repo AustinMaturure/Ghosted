@@ -26,25 +26,26 @@ const OrderDetails = ({ cart }) => {
     );
 
     const customerOrder = generateInvoice(cart);
+
     return (
-        <div className="grid gap-4">
-            <div className="relative py-8 px-4 rounded-lg bg-gray-50">
+        <div className="grid gap-4 md:gap-5 lg:gap-6">
+            <div className="relative py-8 px-4 rounded-lg bg-stone-50">
                 <div
-                    className={`text-sm sm:text-base  overflow-y-auto text-gray-600 ${
+                    className={`text-sm sm:text-base  overflow-y-auto text-stone-600 ${
                         expandText ? "block" : "max-h-20 lg:max-h-32"
                     }`}>
                     {customerOrderLayout}
                 </div>
 
                 <button
-                    disabled={cart.subtotal === 0}
+                    disabled={cart.subtotal === 0 || textCopied}
                     className="absolute top-2 right-3 transition-all disabled:font-light disabled:cursor-not-allowed"
                     onClick={async () => {
                         await navigator.clipboard.writeText(customerOrder);
                         setTextCopied(true);
                         setTimeout(() => {
                             setTextCopied(false);
-                        }, 3000);
+                        }, 2000);
                     }}>
                     {!textCopied ? "Copy" : "Copied"}
                 </button>
@@ -57,18 +58,20 @@ const OrderDetails = ({ cart }) => {
                     {expandText ? <ChevronUp /> : <ChevronDown />}
                 </button>
             </div>
-            <button
-                disabled={cart.subtotal === 0}
-                className="w-full bg-teal-800 hover:bg-teal-700 text-gray-100 py-3 rounded-lg font-medium disabled:cursor-not-allowed"
-                onClick={async () => {
-                    await navigator.clipboard.writeText(customerOrder);
-                    setTextCopied(true);
-                    setTimeout(() => {
-                        setTextCopied(false);
-                    }, 3000);
-                }}>
-                {!textCopied ? "Copy Order" : "Order Copied"}
-            </button>
+            <div className="relative">
+                <button
+                    disabled={cart.subtotal === 0 || textCopied}
+                    className="w-full bg-teal-800 hover:bg-teal-700 text-stone-100 py-3 rounded-lg font-medium disabled:cursor-not-allowed"
+                    onClick={async () => {
+                        await navigator.clipboard.writeText(customerOrder);
+                        setTextCopied(true);
+                        setTimeout(() => {
+                            setTextCopied(false);
+                        }, 3000);
+                    }}>
+                    {!textCopied ? "Copy Order" : "Order Copied"}
+                </button>
+            </div>
         </div>
     );
 };

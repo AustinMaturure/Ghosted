@@ -6,6 +6,7 @@ import {
 } from "../ProductDetails/util";
 import igImg from "../../assets/ig.svg";
 import fbImg from "../../assets/fb.svg";
+import wpImg from "../../assets/wp.svg";
 import OrderDetails from "./OrderDetails";
 import { Link } from "react-router-dom";
 
@@ -69,33 +70,38 @@ export default function Cart() {
 
     if (cart.items.length < 1) {
         return (
-            <div className="my-10 mx-auto px-10 grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-10">
+            <div className="container mx-auto mt-8 m-16 lg:mt-16 lg:mb-32 px-4 grid gap-6 lg:gap-20 grid-cols-1 lg:grid-cols-2">
                 <div className="">
                     <div className="text-lg md:text-xl font-bold mb-3">
                         My Cart
                     </div>
-                    <div className="text-gray-600">
-                        Your Cart Is Empty. Go to our{" "}
+                    <div className="text-stone-600">
+                        Your Cart Is Empty. Visit our{" "}
                         <Link
                             to={"/"}
-                            className="cursor-pointer underline underline-offset-2 hover:text-blue-500">
+                            className="cursor-pointer underline underline-offset-2 hover:text-teal-700">
                             Shop
                         </Link>
+                        .
                     </div>
                 </div>
-                <div>
-                    <div className="text-xl my-3 font-bold">Order Summary</div>
-                    <div className="flex justify-between items-center font-semibold mb-4">
-                        <div>Sub Total(Excluding Delivery)</div>
+                <div className=" lg:w-[28rem] lg:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)]  lg:px-4 lg:rounded-lg lg:py-2 lg:h-max lg:border">
+                    <div className="text-base md:text-lg my-3 font-bold">
+                        Order Summary
+                    </div>
+                    <div className="flex justify-between items-center font-semibold mb-4 md:mb-5 lg:mb-6">
+                        <div>Sub Total(Excluding delivery)</div>
                         <div> R{cart.subtotal}</div>
                     </div>
                     <div className="grid gap-5">
                         <OrderDetails cart={cart} />
-                        <div className="grid gap-2">
-                            <div className="font-medium">Contact Us: </div>
+                        <div className="grid gap-3">
+                            <div className="font-bold text-base md:text-lg ">
+                                Contact Us{" "}
+                            </div>
                             <div className="">
                                 Copy your order and contact us on one of our
-                                socials below
+                                socials below.
                             </div>
                             <div className="flex">
                                 <a
@@ -120,6 +126,17 @@ export default function Cart() {
                                         className="w-8 lg:w-12"
                                     />
                                 </a>
+                                <a
+                                    className=""
+                                    href=""
+                                    target="_blank"
+                                    rel="noopener noreferrer">
+                                    <img
+                                        src={wpImg}
+                                        alt="Whatsapp Logo"
+                                        className="w-8 lg:w-12"
+                                    />
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -129,29 +146,29 @@ export default function Cart() {
     }
 
     return (
-        <div className="container my-10 mx-auto px-3 grid grid-cols-1 gap-2 lg:grid-cols-2 lg:gap-12">
+        <div className="container mx-auto mt-8 m-16 lg:mt-16 lg:mb-32 px-4 grid gap-6 lg:gap-20 grid-cols-1 lg:grid-cols-2 lg:relative">
             <div>
-                <div className="flex justify-between items-center mb-3">
+                <div className="flex justify-between items-center mb-3 md:mb-5 lg:mb-6">
                     <div className="text-lg md:text-xl font-bold">My Cart </div>
                     <div className="sm:hidden">{cart.items.length} items</div>
                 </div>
                 <div className="">
-                    <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-1">
+                    <div className="grid gap-3 lg:gap-6 md:grid-cols-2 md:gap-x-8 md:gap-y-6 lg:grid-cols-1">
                         {cart.items.map((item, index) => (
                             <div
                                 key={index}
-                                className="flex gap-3 sm:gap-6 border-b pb-6 ">
+                                className="flex gap-3 sm:gap-6 border-b pb-3 lg:pb-6 ">
                                 <Link
                                     to={`/item/${item.currentProduct.slug}`}
                                     key={item.id}>
                                     <img
                                         src={item.currentProduct.images[0]}
                                         alt=""
-                                        className="h-24 w-24 sm:h-32 sm:w-32 bg-gray-50 rounded-md object-contain"
+                                        className="h-24 w-24 sm:h-32 sm:w-32 lg:w-40 lg:h-40 bg-stone-100 rounded-lg object-cover"
                                     />
                                 </Link>
 
-                                <div className="w-full grid gap-2">
+                                <div className="w-full grid gap-1 sm:gap-2 lg:gap-3">
                                     <div className="flex justify-between items-center">
                                         <Link
                                             to={`/item/${item.currentProduct.slug}`}
@@ -172,14 +189,21 @@ export default function Cart() {
                                         </span>
                                         <span>
                                             Colour:{" "}
-                                            {item.userOptions.chosenColour}
+                                            {item.userOptions.chosenColour
+                                                .charAt(0)
+                                                .toUpperCase() +
+                                                item.userOptions.chosenColour.substring(
+                                                    1,
+                                                    item.userOptions
+                                                        .chosenColour.length
+                                                )}
                                         </span>
                                     </div>
                                     <div>
                                         <div className="mb-1 text-sm">
                                             Quantity:
                                         </div>
-                                        <div className="w-full flex justify-between border-[0.75px] border-gray-200 px-2 py-1 rounded-lg">
+                                        <div className="w-full flex justify-between border border-stone-200 px-2 py-1 rounded-lg">
                                             <button
                                                 onClick={() =>
                                                     handleQuantityChange(
@@ -205,7 +229,7 @@ export default function Cart() {
                                     </div>
                                     <div>
                                         <button
-                                            className="underline underline-offset-1 text-gray-600 hover:text-gray-500"
+                                            className="underline underline-offset-1 text-stone-600 hover:text-stone-500"
                                             onClick={() =>
                                                 handleRemoveItem(index)
                                             }>
@@ -218,21 +242,23 @@ export default function Cart() {
                     </div>
                 </div>
             </div>
-            <div className="lg:border-l lg:pl-4">
-                <div className="text-lg md:text-xl my-3 font-bold">
+            <div className=" lg:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)]  lg:w-[28rem] lg:rounded-lg lg:p-6 lg:h-max lg:border lg:sticky top-16">
+                <div className="text-base md:text-lg my-3 font-bold">
                     Order Summary
                 </div>
-                <div className="flex justify-between items-center font-semibold mb-4">
+                <div className="flex justify-between text-sm md:text-base items-center font-semibold mb-4 md:mb-5 lg:mb-6">
                     <div>Sub Total(Excluding delivery)</div>
                     <div> R{cart.subtotal}</div>
                 </div>
-                <div className="grid gap-5">
+                <div className="grid gap-3 lg:gap-6">
                     <OrderDetails cart={cart} />
-                    <div className="grid gap-2">
-                        <div className="font-medium">Contact Us </div>
+                    <div className="grid gap-3">
+                        <div className="font-bold text-base md:text-lg">
+                            Contact Us{" "}
+                        </div>
                         <div className="">
                             Copy your order and contact us on one of our socials
-                            below
+                            below.
                         </div>
                         <div className="flex">
                             <a
@@ -254,6 +280,17 @@ export default function Cart() {
                                 <img
                                     src={fbImg}
                                     alt="Facebook"
+                                    className="w-8 lg:w-12"
+                                />
+                            </a>
+                            <a
+                                className=""
+                                href=""
+                                target="_blank"
+                                rel="noopener noreferrer">
+                                <img
+                                    src={wpImg}
+                                    alt="Whatsapp Logo"
                                     className="w-8 lg:w-12"
                                 />
                             </a>

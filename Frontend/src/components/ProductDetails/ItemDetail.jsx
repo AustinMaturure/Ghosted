@@ -78,7 +78,7 @@ export default function ItemDetail() {
                 <div className="font-bold">R{productDetails.price}</div>
             </div>
             <ProductImages images={productDetails.images} />
-            <div className="lg:border-l-[0.75px] lg:border-r-[0.75px] sm:border-gray-100 lg:py-10 flex flex-col gap-6 lg:gap-8">
+            <div className="lg:border-l-[0.75px] lg:border-r-[0.75px] sm:border-stone-100 lg:py-10 flex flex-col gap-6 lg:gap-8">
                 <div className="hidden justify-between text-xl px-6 font-medium lg:text-2xl lg:flex">
                     <div className=" uppercase tracking-wide">
                         {productDetails.name}

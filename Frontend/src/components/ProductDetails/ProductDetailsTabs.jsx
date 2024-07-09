@@ -17,12 +17,12 @@ const ProductDetailsTabs = ({ productDetails }) => {
 
     return (
         <div className="grid gap-2 ">
-            <div className="flex justify-between border-t-[0.75px] border-b text-gray-600 font-light px-6 text-sm sm:text-base">
+            <div className="flex justify-between border-t-[0.75px] border-b text-stone-600 font-light px-6 text-sm sm:text-base">
                 <button
                     onClick={() => setCurrentTab("description")}
                     className={
                         currentTab === "description"
-                            ? "py-3 border-b-2 border-b-gray-900 text-gray-900 font-normal"
+                            ? "py-3 border-b-2 border-b-stone-900 text-stone-900 font-normal"
                             : "py-3 border-b-2 border-white"
                     }>
                     Product Details
@@ -31,7 +31,7 @@ const ProductDetailsTabs = ({ productDetails }) => {
                     onClick={() => setCurrentTab("materials")}
                     className={
                         currentTab === "materials"
-                            ? "py-3 border-b-2 border-b-gray-900 text-gray-900 font-normal"
+                            ? "py-3 border-b-2 border-b-stone-900 text-stone-900 font-normal"
                             : "py-3 border-b-2 border-white"
                     }>
                     Product Materials
@@ -40,7 +40,7 @@ const ProductDetailsTabs = ({ productDetails }) => {
                     onClick={() => setCurrentTab("delivery")}
                     className={
                         currentTab === "delivery"
-                            ? "py-3 border-b-2 border-b-gray-900 text-gray-900 font-normal"
+                            ? "py-3 border-b-2 border-b-stone-900 text-stone-900 font-normal"
                             : "py-3 border-b-2 border-white"
                     }>
                     Delivery Details

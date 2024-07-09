@@ -83,7 +83,7 @@ const AddToCartForm = ({ productDetails, setModalOpened, modalOpened }) => {
             <div className="grid grid-cols-2 gap-3">
                 <div className="grid gap-1">
                     <label
-                        className="text-sm sm:text-base text-gray-500"
+                        className="text-sm sm:text-base text-stone-500"
                         htmlFor="chosenColour">
                         Colours{" "}
                     </label>
@@ -102,7 +102,7 @@ const AddToCartForm = ({ productDetails, setModalOpened, modalOpened }) => {
                 </div>
                 <div className="grid gap-1">
                     <label
-                        className="text-sm sm:text-base text-gray-500"
+                        className="text-sm sm:text-base text-stone-500"
                         htmlFor="chosenSize">
                         Size
                     </label>
@@ -121,7 +121,7 @@ const AddToCartForm = ({ productDetails, setModalOpened, modalOpened }) => {
             </div>
 
             <div className="grid gap-1">
-                <label className="text-sm sm:text-base text-gray-500">
+                <label className="text-sm sm:text-base text-stone-500">
                     Quantity{" "}
                 </label>
                 <div className="py-3 px-2 shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] rounded-lg flex justify-between">
@@ -150,7 +150,7 @@ const AddToCartForm = ({ productDetails, setModalOpened, modalOpened }) => {
             <div className="relative">
                 <button
                     type="submit"
-                    className="w-full bg-teal-800 hover:bg-teal-700 text-gray-100 py-3 rounded-lg font-medium  disabled:cursor-not-allowed"
+                    className="w-full bg-teal-800 hover:bg-teal-700 text-stone-100 py-3 rounded-lg font-medium  disabled:cursor-not-allowed"
                     onClick={() =>
                         window.scrollTo({
                             top: 0,
