@@ -43,18 +43,6 @@ const OrderDetails = ({ cart, handleOrderCopied }) => {
                 </div>
 
                 <button
-                    disabled={cart.subtotal === 0 || textCopied}
-                    className="absolute top-2 right-3 transition-all disabled:font-light disabled:cursor-not-allowed"
-                    onClick={async () => {
-                        await navigator.clipboard.writeText(customerOrder);
-                        setTextCopied(true);
-                        setTimeout(() => {
-                            setTextCopied(false);
-                        }, 1500);
-                    }}>
-                    {!textCopied ? "Copy" : "Copied"}
-                </button>
-                <button
                     disabled={cart.subtotal === 0}
                     className="absolute bottom-0 left-1/2 -translate-x-1/2 disabled:font-light disabled:cursor-not-allowed"
                     onClick={() =>

@@ -71,7 +71,7 @@ export default function ItemDetail() {
         );
 
     return (
-        <main className="container mx-auto flex flex-col lg:flex-row gap-6 lg:gap-12 sm:px-1 py-12 lg:py-0 relative">
+        <main className="container mx-auto flex flex-col lg:flex-row gap-6 lg:gap-12 sm:px-1 py-12 lg:py-0 lg:justify-center relative">
             <div className="flex justify-between text-xl px-6 md:px-20 font-medium lg:hidden">
                 <div className="uppercase tracking-wide heading-font">
                     {productDetails.name}

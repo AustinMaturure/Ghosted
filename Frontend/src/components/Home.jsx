@@ -44,7 +44,7 @@ function Home({ isOpen, setIsOpen }) {
     }, [location]);
 
     return isLoading ? (
-        <div className="home-container">
+        <div className="container mx-auto">
             <p className="items-hint">
                 You are Currently Being Shown all {filteredItems.length} Items.
             </p>

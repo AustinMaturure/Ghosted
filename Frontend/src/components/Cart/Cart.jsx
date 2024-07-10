@@ -165,8 +165,8 @@ export default function Cart() {
     }
 
     return (
-        <div className="container mx-auto mt-8 m-16 lg:mt-16 lg:mb-32 px-4 grid gap-6 lg:gap-20 grid-cols-1 lg:grid-cols-2 relative">
-            <div>
+        <div className="container mx-auto mt-8 m-16 lg:mt-16 lg:mb-32 px-4 flex gap-6 lg:gap-20 flex-col lg:flex-row relative justify-center">
+            <div className="lg:w-[30rem]">
                 <div className="flex justify-between items-center mb-3 md:mb-5 lg:mb-6">
                     <div className="text-lg md:text-xl font-bold heading-font">
                         My Cart{" "}

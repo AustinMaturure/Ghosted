@@ -1,6 +1,6 @@
 const LoadingSkeleton = () => {
     return (
-        <main className="container animate-pulse mx-auto flex flex-col lg:flex-row gap-10 lg:gap-12 sm:px-1 py-12 lg:py-0 lg:px-24">
+        <main className="container animate-pulse mx-auto flex flex-col lg:flex-row gap-10 lg:gap-12 sm:px-1 py-12 lg:py-0 lg:px-24 justify-center">
             <div className="grid justify-center lg:py-10">
                 <div className="flex flex-col-reverse sm:px-0 max-w-[40rem] lg:flex-col gap-2 xl:flex-row lg:gap-6">
                     <div className="flex justify-center lg:justify-start">
