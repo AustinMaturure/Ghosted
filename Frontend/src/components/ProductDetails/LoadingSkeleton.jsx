@@ -1,5 +1,3 @@
-import React from "react";
-
 const LoadingSkeleton = () => {
     return (
         <main className="container animate-pulse mx-auto flex flex-col lg:flex-row gap-10 lg:gap-12 sm:px-1 py-12 lg:py-0 lg:px-24">

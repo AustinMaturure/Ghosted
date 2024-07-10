@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const ProductImages = ({ images }) => {
     const [imgIndex, setImgIndex] = useState(0);
@@ -36,6 +37,10 @@ const ProductImages = ({ images }) => {
             </div>
         </section>
     );
+};
+
+ProductImages.propTypes = {
+    images: PropTypes.array,
 };
 
 export default ProductImages;

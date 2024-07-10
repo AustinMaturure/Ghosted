@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { X } from "lucide-react";
+import PropTypes from "prop-types";
 
 const ShowCart = ({ cart, setModalOpened, modalOpened }) => {
     return (
@@ -87,6 +88,12 @@ const ShowCart = ({ cart, setModalOpened, modalOpened }) => {
             </Link>
         </div>
     );
+};
+
+ShowCart.propTypes = {
+    cart: PropTypes.object,
+    setModalOpened: PropTypes.func,
+    modalOpened: PropTypes.bool,
 };
 
 export default ShowCart;

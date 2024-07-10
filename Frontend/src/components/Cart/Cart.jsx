@@ -263,7 +263,7 @@ export default function Cart() {
                     </div>
                 </div>
             </div>
-            <div className=" lg:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)]  lg:w-[28rem] lg:rounded-lg lg:p-6 lg:h-max lg:border lg:sticky top-16">
+            <div className=" lg:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)]  lg:w-[28rem] lg:rounded-lg lg:p-6 lg:h-max lg:border lg:sticky lg:top-16">
                 <div className="text-base md:text-lg my-3 font-bold">
                     Order Summary
                 </div>

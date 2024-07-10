@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { generateInvoice } from "../ProductDetails/util";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import PropTypes from "prop-types";
 
 const OrderDetails = ({ cart, handleOrderCopied }) => {
     const [textCopied, setTextCopied] = useState(false);
@@ -83,6 +84,11 @@ const OrderDetails = ({ cart, handleOrderCopied }) => {
             </div>
         </div>
     );
+};
+
+OrderDetails.propTypes = {
+    cart: PropTypes.object,
+    handleOrderCopied: PropTypes.bool,
 };
 
 export default OrderDetails;

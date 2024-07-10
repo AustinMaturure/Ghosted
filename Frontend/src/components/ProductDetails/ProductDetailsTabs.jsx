@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const ProductDetailsTabs = ({ productDetails }) => {
     const [currentTab, setCurrentTab] = useState("description");
@@ -49,6 +50,10 @@ const ProductDetailsTabs = ({ productDetails }) => {
             <div className="px-6 ">{tabContent}</div>
         </div>
     );
+};
+
+ProductDetailsTabs.propTypes = {
+    productDetails: PropTypes.object,
 };
 
 export default ProductDetailsTabs;

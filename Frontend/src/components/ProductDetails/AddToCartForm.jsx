@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { calculateCartTotal, decryptString, encryptString } from "./util";
 const SECRET_KEY = import.meta.env.VITE_SECRET_KEY;
+import PropTypes from "prop-types";
 
 const AddToCartForm = ({ productDetails, setModalOpened, modalOpened }) => {
     const [productQuantity, setProductQuantity] = useState(1);
@@ -165,6 +166,12 @@ const AddToCartForm = ({ productDetails, setModalOpened, modalOpened }) => {
             </div>
         </form>
     );
+};
+
+AddToCartForm.propTypes = {
+    productDetails: PropTypes.object,
+    setModalOpened: PropTypes.func,
+    modalOpened: PropTypes.bool,
 };
 
 export default AddToCartForm;
