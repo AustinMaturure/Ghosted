@@ -82,6 +82,8 @@ font-size: 1.7em;
   margin-top: 1rem;
   margin-bottom: 2rem;
   justify-items: center;
+  padding:0 3rem;
+
   
 
 }
@@ -118,11 +120,6 @@ font-size: 1.7em;
   object-fit: cover;
   transition: transform 0.1s;
 
-}
-
-.items-cnt{
-    padding:0 3rem;
-    column-gap: 1rem
 }
 
 .items-cnt a{
