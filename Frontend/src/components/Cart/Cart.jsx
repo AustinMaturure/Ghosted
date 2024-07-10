@@ -180,7 +180,7 @@ export default function Cart() {
                                 key={index}
                                 className="flex gap-3 sm:gap-6 border-b pb-3 lg:pb-6 ">
                                 <Link
-                                    to={`/item/${item.currentProduct.slug}`}
+                                    to={`/product/${item.currentProduct.slug}`}
                                     key={item.id}>
                                     <img
                                         src={item.currentProduct.images[0]}
@@ -192,7 +192,7 @@ export default function Cart() {
                                 <div className="w-full grid gap-1 sm:gap-2 lg:gap-3">
                                     <div className="flex justify-between items-center">
                                         <Link
-                                            to={`/item/${item.currentProduct.slug}`}
+                                            to={`/product/${item.currentProduct.slug}`}
                                             key={item.id}>
                                             <div className="text-base sm:text-lg font-medium">
                                                 {item.currentProduct.name}

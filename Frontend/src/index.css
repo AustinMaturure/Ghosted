@@ -80,9 +80,9 @@ footer p {
     width: 40px;
     cursor: pointer;
 }
-
-.s-links img:hover {
+f .s-links img:hover {
     color: #115e59;
+    transition: transform 0.1s;
 }
 
 .legal {

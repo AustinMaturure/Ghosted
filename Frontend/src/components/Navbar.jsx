@@ -47,6 +47,7 @@ export default function Navbar({ isOpen, toggleNavbar }) {
     };
     useEffect(() => {
         setImg(false);
+        setsVisibility(false);
     }, [useLocation()]);
 
     return (
@@ -98,10 +99,10 @@ export default function Navbar({ isOpen, toggleNavbar }) {
             {svisible ? (
                 <>
                     <div
-                        className={`search-box  ${
+                        className={`search-box ${
                             !svisible ? "" : "search-hide"
                         }`}>
-                        <div className="search ">
+                        <div className="search">
                             <input
                                 className="search-ipt"
                                 type="text"
@@ -119,29 +120,42 @@ export default function Navbar({ isOpen, toggleNavbar }) {
                             </button>
                         </div>
                     </div>
-                    <div className="search-hint">
-                        {isLoading && query.length > 1 ? (
-                            <p style={{ fontFamily: "Oswald", color: "#fff" }}>
-                                Looking...
-                            </p>
-                        ) : query.length > 1 ? (
-                            data.map((result, index) => (
-                                <div className="search-hint-link" key={index}>
-                                    <p>
-                                        <Link
-                                            to={`item/${result.name.replace(
-                                                / /g,
-                                                "-"
-                                            )}`}>
-                                            {result.name}
-                                        </Link>
-                                    </p>
-                                </div>
-                            ))
-                        ) : (
-                            <></>
-                        )}
-                    </div>
+                    {query.length > 0 ? (
+                        <div className="search-hint">
+                            {isLoading && query.length > 1 ? (
+                                <p
+                                    style={{
+                                        fontFamily: "Oswald",
+                                        color: "#fff",
+                                    }}>
+                                    Looking...
+                                </p>
+                            ) : query.length > 1 ? (
+                                data.map((result, index) => (
+                                    <div
+                                        className="search-hint-link"
+                                        key={index}>
+                                        <p>
+                                            <Link
+                                                to={`product/${result.name
+                                                    .toLowerCase()
+                                                    .replace(/ /g, "-")
+                                                    .replace(
+                                                        /[^a-z0-9_-]/g,
+                                                        ""
+                                                    )}`}>
+                                                {result.name}
+                                            </Link>
+                                        </p>
+                                    </div>
+                                ))
+                            ) : (
+                                <></>
+                            )}
+                        </div>
+                    ) : (
+                        <></>
+                    )}
                 </>
             ) : (
                 <></>

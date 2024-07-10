@@ -15,17 +15,21 @@ export default function Footer() {
                 <h2>{`Feel Free to Write to Us (We Promise we won't Ghost you.)`}</h2>
 
                 {/* Input field for message */}
-                <input type="email" placeholder="Write Message..."></input>
+                <input
+                    type="email"
+                    value="Write Us @ghostedza.gmail.com"></input>
 
                 {/* Social media links */}
                 <div className="s-links">
-                    <a
-                        className="social-link"
-                        href="https://tr.ee/IXR7dqbKw4"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                        <img src={igImg} alt="Instagram" />
-                    </a>
+                    <div className="s-link">
+                        <a
+                            className="social-link"
+                            href="https://tr.ee/IXR7dqbKw4"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                            <img src={igImg} alt="Instagram" />
+                        </a>
+                    </div>
                     <img src={wpImg} alt="WhatsApp" />
                     <img src={fbImg} alt="Facebook" />
                     <img src={ttImg} alt="Twitter" />
