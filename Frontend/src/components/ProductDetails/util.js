@@ -29,9 +29,13 @@ export const generateInvoice = (cart) => {
                 item.currentProduct.price
             } - Quantity: ${item.quantity} - Size: ${
                 item.userOptions.chosenSize
-            } - Colour: ${item.userOptions.chosenColour} - Item Sub Total: R${
-                item.total
-            }\n`)
+            } - Colour: ${
+                item.userOptions.chosenColour.charAt(0).toUpperCase() +
+                item.userOptions.chosenColour.substring(
+                    1,
+                    item.userOptions.chosenColour.length
+                )
+            } - Item Sub Total: R${item.total}\n`)
     );
 
     invoice += `\nCart Sub Total(Excluding Delivery): R${cart.subtotal}`;

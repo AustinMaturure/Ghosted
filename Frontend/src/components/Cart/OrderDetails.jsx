@@ -16,8 +16,12 @@ const OrderDetails = ({ cart, handleOrderCopied }) => {
                         {item.currentProduct.name} - Price:{" R"}
                         {item.currentProduct.price} - Quantity: {item.quantity}{" "}
                         - Size: {item.userOptions.chosenSize} - Colour:{" "}
-                        {item.userOptions.chosenColour} - Item Sub Total: R
-                        {item.total}
+                        {item.userOptions.chosenColour.charAt(0).toUpperCase() +
+                            item.userOptions.chosenColour.substring(
+                                1,
+                                item.userOptions.chosenColour.length
+                            )}{" "}
+                        - Item Sub Total: R{item.total}
                     </div>
                 ))}
             </div>

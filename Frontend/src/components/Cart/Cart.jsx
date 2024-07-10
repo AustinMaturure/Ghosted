@@ -9,7 +9,6 @@ import fbImg from "../../assets/fb.svg";
 import wpImg from "../../assets/wp.svg";
 import OrderDetails from "./OrderDetails";
 import { Link } from "react-router-dom";
-import { MoveRight } from "lucide-react";
 
 const SECRET_KEY = import.meta.env.VITE_SECRET_KEY;
 
@@ -101,24 +100,23 @@ export default function Cart() {
                                 Place Your Order{" "}
                             </div>
                             <div className="grid gap-2 ">
-                                <div className="flex gap-2 md:gap-1 items-center">
+                                <div className="flex gap-2 md:gap-2 items-center">
                                     <div className="font-semibold rounded-full w-8  h-8 flex items-center justify-center bg-teal-800 text-stone-50">
                                         <div className="text-lg h-4 w-4 flex items-center justify-center">
                                             1
                                         </div>
                                     </div>
-                                    <MoveRight className="text-teal-800 hidden sm:block" />
+
                                     <div className="text-base lg:text-lg h-10 flex items-center">
                                         Copy your order
                                     </div>
                                 </div>
-                                <div className="flex gap-2 md:gap-1 items-center">
+                                <div className="flex gap-2 md:gap-2 items-center">
                                     <div className="font-semibold rounded-full w-8  h-8 flex items-center justify-center bg-teal-800 text-stone-50">
                                         <div className="text-lg h-4 w-4 flex items-center justify-center">
                                             2
                                         </div>
                                     </div>
-                                    <MoveRight className="text-teal-800 hidden sm:block" />
                                     <div className="text-base lg:text-lg h-10 flex items-center">
                                         Contact us on one of our socials below
                                     </div>
@@ -280,24 +278,24 @@ export default function Cart() {
                             Place Your Order{" "}
                         </div>
                         <div className="grid gap-2 ">
-                            <div className="flex gap-2 md:gap-1 items-center">
+                            <div className="flex gap-2 md:gap-2 items-center">
                                 <div className="font-semibold rounded-full w-8  h-8 flex items-center justify-center bg-teal-800 text-stone-50">
                                     <div className="text-lg h-4 w-4 flex items-center justify-center">
                                         1
                                     </div>
                                 </div>
-                                <MoveRight className="text-teal-800 hidden sm:block" />
+
                                 <div className="text-base lg:text-lg h-10 flex items-center">
                                     Copy your order
                                 </div>
                             </div>
-                            <div className="flex gap-2 md:gap-1 items-center">
+                            <div className="flex gap-2 md:gap-2 items-center">
                                 <div className="font-semibold rounded-full w-8  h-8 flex items-center justify-center bg-teal-800 text-stone-50">
                                     <div className="text-lg h-4 w-4 flex items-center justify-center">
                                         2
                                     </div>
                                 </div>
-                                <MoveRight className="text-teal-800 hidden sm:block" />
+
                                 <div className="text-base lg:text-lg h-10 flex items-center">
                                     Contact us on one of our socials below
                                 </div>
