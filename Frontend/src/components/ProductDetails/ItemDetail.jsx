@@ -57,8 +57,9 @@ export default function ItemDetail() {
     };
 
     useEffect(() => {
+        setIsLoading(true);
         fetchProductDetails();
-    }, []);
+    }, [slug]);
 
     if (isLoading) return <LoadingSkeleton />;
     if (errorMessage)
@@ -78,14 +79,14 @@ export default function ItemDetail() {
                 <div className="font-bold">R{productDetails.price}</div>
             </div>
             <ProductImages images={productDetails.images} />
-            <div className="lg:border-l-[0.75px] lg:border-r-[0.75px] sm:border-stone-100 lg:py-10 flex flex-col gap-6 lg:gap-8">
-                <div className="hidden justify-between text-xl px-6 font-medium lg:text-2xl lg:flex">
+            <div className="lg:border-l lg:border-r sm:border-stone-100 lg:py-10 flex flex-col gap-6 lg:gap-8 lg:w-[30rem]">
+                <div className="hidden justify-between text-xl px-6 font-medium lg:text-2xl lg:flex ">
                     <div className=" uppercase tracking-wide heading-font">
                         {productDetails.name}
                     </div>
                     <div className="font-bold">R{productDetails.price}</div>
                 </div>
-                <div className="lg:w-[30rem] grid gap-8 lg:gap-6">
+                <div className=" grid gap-8 lg:gap-6">
                     <AddToCartForm
                         productDetails={productDetails}
                         modalOpened={modalOpened}

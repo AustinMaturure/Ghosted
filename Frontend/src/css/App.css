@@ -11,6 +11,7 @@
     align-items: center;
     box-shadow: 5px 5px #115e59;
     transition: all 0.3s;
+    margin-top: 10px;
 }
 
 .skel {
