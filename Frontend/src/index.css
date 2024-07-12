@@ -28,8 +28,7 @@ body {
 }
 
 h1 {
-    font-family: "Oswald", "Open Sans", "Helvetica Neue", sans-serif,
-        "sans-serif";
+    font-family: "Oswald";
     color: #f1f1f1;
     font-size: 1.5em;
     margin: 0px;
@@ -41,6 +40,7 @@ footer {
     color: var(--text-color);
     display: flex;
     flex-direction: column;
+    gap: 16px;
     text-align: left;
     padding: 0.5rem;
 }
@@ -52,17 +52,19 @@ footer h1 {
 }
 
 footer h2 {
-    font-family: "Oswald", "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Oswald";
+    font-size: 1.6rem;
 }
 
 footer input {
-    font-family: "Oswald", "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "Oswald";
     background-color: transparent;
     outline: none;
     font-size: 26px;
     border: none;
     border-bottom: 2px solid #115e59;
-    color: #f1f1f1;
+    color: rgb(118, 118, 118);
+    text-wrap: wrap;
 }
 
 footer p {
@@ -79,13 +81,14 @@ footer p {
 .s-links img {
     width: 40px;
     cursor: pointer;
-}
-f .s-links img:hover {
-    color: #115e59;
     transition: transform 0.1s;
+}
+
+.s-links img:hover {
+    transform: scale(1.3);
 }
 
 .legal {
     margin-top: 2rem;
-    font-family: "satoshi", "Open Sans", "Helvetica Neue", sans-serif;
+    font-family: "satoshi";
 }

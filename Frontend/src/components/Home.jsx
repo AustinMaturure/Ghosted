@@ -56,7 +56,7 @@ function Home({ isOpen, setIsOpen }) {
             </section>
         </div>
     ) : (
-        <div className="container mx-auto">
+        <div className="">
             {location.pathname === "/" ? (
                 <div
                     className={`filters flex ${
@@ -87,35 +87,40 @@ function Home({ isOpen, setIsOpen }) {
             ) : (
                 <></>
             )}
-            <p className="items-hint">
-                You are Currently Being Shown all {filteredItems.length} Items.
-            </p>
-            <section className="items-cnt">
-                {filteredItems
-                    .map((item) => (
-                        <Link to={`/product/${item.slug}`} key={item.id}>
-                            <div className="product">
-                                <div className="product-img-cnt">
-                                    <img src={item.images[0]} alt="" />
+            <div className="container mx-auto">
+                <p className="items-hint">
+                    You are Currently Being Shown all {filteredItems.length}{" "}
+                    Items.
+                </p>
+                <section className="items-cnt">
+                    {filteredItems
+                        .map((item) => (
+                            <Link to={`/product/${item.slug}`} key={item.id}>
+                                <div className="product">
+                                    <div className="product-img-cnt">
+                                        <img src={item.images[0]} alt="" />
+                                    </div>
+                                    <h1 className="product-name">
+                                        {item.name}
+                                    </h1>
+                                    <h1 className="product-price">
+                                        R {item.price}
+                                    </h1>
                                 </div>
-                                <h1 className="product-name">{item.name}</h1>
-                                <h1 className="product-price">
-                                    R {item.price}
-                                </h1>
-                            </div>
-                        </Link>
-                    ))
-                    .reverse()}
-            </section>
-            <hr />
-            <p
-                style={{
-                    fontFamily: "satoshi",
-                    fontWeight: "bold",
-                    textAlign: "right",
-                }}>
-                End of List.
-            </p>
+                            </Link>
+                        ))
+                        .reverse()}
+                </section>
+                <hr />
+                <p
+                    style={{
+                        fontFamily: "satoshi",
+                        fontWeight: "bold",
+                        textAlign: "right",
+                    }}>
+                    End of List.
+                </p>
+            </div>
         </div>
     );
 }
