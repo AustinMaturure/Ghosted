@@ -111,18 +111,19 @@ function Home({ isOpen, setIsOpen }) {
                         ))
                         .reverse()}
                 </section>
-                <hr />
+                
+            </div><hr style={{width: "98%", margin: "0 auto"}} />
                 <p
                     style={{
                         fontFamily: "satoshi",
                         fontWeight: "bold",
                         textAlign: "right",
-                        paddingTop: "1rem",
+                        paddingTop: "0.5rem",
                         paddingBottom: "1rem",
+                        paddingRight:"1rem"
                     }}>
                     End of List.
                 </p>
-            </div>
         </div>
     );
 }

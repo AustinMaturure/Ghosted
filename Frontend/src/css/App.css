@@ -84,7 +84,7 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.1s;
-    overflow: hidden;
+
 }
 
 .items-hint {
