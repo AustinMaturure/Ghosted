@@ -1,3 +1,4 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/516d0734-ffe6-496a-ba4f-fc6757baa542/deploy-status)](https://app.netlify.com/sites/ghostedza/deploys)
 # Ghosted | E-Commerce Clothing Brand
 
 This is a full-stack e-commerce web application for a clothing brand built with React for the front end and Django for the back end.
