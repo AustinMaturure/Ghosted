@@ -19,6 +19,7 @@
     height: 20rem;
     background-color: rgba(207, 207, 207, 0.838);
     min-width: 100%;
+    border-radius: 12px;
 }
 
 .filters div:hover {

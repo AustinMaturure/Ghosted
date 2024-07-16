@@ -59,6 +59,7 @@
 .logo-img-cnt img {
     max-height: 100%;
     transform: scale(2);
+    object-fit: cover;
     align-self: center;
 }
 
