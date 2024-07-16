@@ -11,7 +11,7 @@ const ProductImages = ({ images }) => {
                         {images.map((imageUrl, index) => (
                             <div
                                 key={index}
-                                className="shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]  rounded-lg  w-12 h-12 hover:cursor-pointer"
+                                className="shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] rounded-lg  w-12 h-12 hover:cursor-pointer z-10"
                                 onClick={() =>
                                     setImgIndex(images.indexOf(imageUrl))
                                 }>
@@ -31,7 +31,7 @@ const ProductImages = ({ images }) => {
                     <img
                         src={images[imgIndex]}
                         alt=""
-                        className="h-auto w-full block object-contain sm:rounded-xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] bg-stone-100 "
+                        className="h-auto w-full block object-contain sm:rounded-xl shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] bg-stone-100 -z-0"
                     />
                 </div>
             </div>
