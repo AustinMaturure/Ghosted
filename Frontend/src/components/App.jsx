@@ -5,7 +5,7 @@ import Footer from "./Footer.jsx";
 import ItemDetail from "./ProductDetails/ItemDetail.jsx";
 import Cart from "./Cart/Cart.jsx";
 import PageNotFound from "./PageNotFound.jsx";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const App = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -13,6 +13,13 @@ const App = () => {
     const toggleNavbar = () => {
         setIsOpen((prevIsOpen) => !prevIsOpen);
     };
+
+    useEffect(() => {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth',
+        });
+      }, []);
 
     return (
         <BrowserRouter>
