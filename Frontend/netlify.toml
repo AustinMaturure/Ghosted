@@ -1,7 +1,7 @@
 
 [build]
   command = "vite build"
-  publish = "public"
+  publish = "build"
 
 [[headers]]
   for = "/*.js"
