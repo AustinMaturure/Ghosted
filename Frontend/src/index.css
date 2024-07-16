@@ -75,7 +75,7 @@ footer p {
     display: flex;
     filter: invert(1);
     gap: 8px;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
 .s-links img {
@@ -89,6 +89,6 @@ footer p {
 }
 
 .legal {
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-family: "satoshi";
 }

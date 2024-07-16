@@ -117,6 +117,8 @@ function Home({ isOpen, setIsOpen }) {
                         fontFamily: "satoshi",
                         fontWeight: "bold",
                         textAlign: "right",
+                        paddingTop: "1rem",
+                        paddingBottom: "1rem",
                     }}>
                     End of List.
                 </p>

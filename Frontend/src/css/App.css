@@ -84,13 +84,15 @@
     align-items: center;
     justify-content: center;
     transition: transform 0.1s;
+    overflow: hidden;
 }
 
 .items-hint {
     text-align: center;
     font-family: "satoshi";
     font-weight: 700;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .product-img-cnt img {
