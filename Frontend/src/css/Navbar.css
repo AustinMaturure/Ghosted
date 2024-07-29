@@ -99,6 +99,7 @@
 
 .search-hint {
     position: relative;
+    z-index: 1000;
 }
 
 .search-hint a {
